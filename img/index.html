@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <style>
+        body {
+            height: 190vh;
+        }
+        img {
+            max-width: 11.6vw;
+            padding: .25em;
+        }
+
+        .nav {
+            background-color: var(--white);
+        }
+    </style>
+    <title>images / 100</title>
+</head>
+<body>
+    <div id="content">
+    </div>
+
+    <div class="nav">
+        <a class="next hide"><h1>⬅</h1></a>
+        
+        <div class="details"><small>⟡<small id="number">gallery</small>⟡</small>
+        <small id="about"><a href="../index.html">homepage</a></small>
+        </div>
+
+        <a class="next hide"><h1>⮕</h1></a>
+    </div>
+</body>
+
+<script>
+let imgs = [];
+let aimgs = [];
+let count = 41
+
+    window.addEventListener("load", () => {
+        for (i = 0; i < count; i++) {
+            imgs.push(i + '.JPG')
+        }
+        for (i in imgs) {
+            // console.log(i, imgs[i])
+            let content = document.getElementById("content")
+            let img = document.createElement('img');
+            img.src = imgs[i];
+            img.loading = "lazy"
+            img.title = i;
+            // img.addEventListener("mouseenter", displayNum)
+            aimgs.push(img);
+            content.appendChild(img);
+          }
+    })
+
+</script>
+</html>

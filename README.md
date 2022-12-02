@@ -1,6 +1,6 @@
 | # | File | Description | Tags |
 | ----------- | ----------- | --------------| --------------|
- 00 | [Lifeloss](/lifeloss.md) | nanowrimobaby | curious |
+ 00 | [main](/index.html) | main page | viable |
 
 
 <details>
