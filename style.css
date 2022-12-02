@@ -1,0 +1,49 @@
+.content {
+    justify-content: center;
+}
+.container {
+    display: flex;
+    width: 10em;
+    gap: .5em;
+    align-items: baseline;
+    margin: 0em;
+    padding: 0em 1em;
+    border-left: 1px var(--black) solid;
+}
+
+.info > h3 {
+    margin: 0;
+}
+
+.days {
+    max-height: 80vh;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.days > * {
+    flex: 1 30px;
+    width: 9.5em;
+}
+
+.title {
+    display: flex;
+    align-items: baseline;
+    gap: .8em;
+    padding-left: 1em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    width: 90vw;
+}
+
+#about {
+    left: 4em;
+    text-align: center;
+    /* font-weight: bold; */
+    /* letter-spacing: .1em; */
+}
+
+.disabled  > *{
+    color: var(--black) !important;
+    opacity: .4 !important;
+}
