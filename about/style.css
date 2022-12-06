@@ -1,31 +1,34 @@
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .content {
     display: flex;
     flex-direction: row;
-    padding: 1em;
+    padding-top: 1em;
     gap: 2em;
-    height: 86vh;
+    width: 100vw;
 }
 
 .content > * {
     flex: 0 0 auto;
-    width: 40em;
 }
 p, li {
     max-width: 35em;
 }
 
 .class {
-    padding-left: 1em;
+    padding-left: 2em;
+    width: 42vw;
 }
 
 .practice {
     border-left: 1px solid var(--black);
     padding-left: 2em;
+    width: 42vw;
+
 }
+
 .color {
     display: flex;
     gap: .5em;
@@ -48,4 +51,25 @@ p, li {
 
 #participants > * {
     width: 50%;
+}
+
+@media only screen
+and (max-width: 700px)
+{
+    .class, .practice {
+        width: 90vw;
+    }
+    .content {
+        flex-direction: column;
+    }
+
+    .practice {
+        border-left: none;
+        border-top: 1px solid var(--black);
+        height: 80vh;
+    }
+    .nav {
+        background-color: var(--white);
+    }
+    
 }
