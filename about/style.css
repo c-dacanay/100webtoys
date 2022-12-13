@@ -13,6 +13,7 @@ body {
 .content > * {
     flex: 0 0 auto;
 }
+
 p, li {
     max-width: 35em;
 }
@@ -26,7 +27,7 @@ p, li {
     border-left: 1px solid var(--black);
     padding-left: 2em;
     width: 42vw;
-
+    height: 85vh;
 }
 
 .color {
