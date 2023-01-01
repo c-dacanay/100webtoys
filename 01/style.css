@@ -1,0 +1,22 @@
+.wrapper {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+marquee {
+    flex: 1;
+}
+
+marquee > h1 {
+    padding: 0;
+    margin: .4em;
+    line-height: 0;
+    font-size: 7em;
+    color: var(--black);
+    transition: color .5s;
+}
+
+h1:hover {
+    color: var(--blue);
+}
