@@ -31,40 +31,6 @@
     align-items: center;
 }
 
-.curious::before{
-    content: '⎌'
-}
-
-.surprising::before{
-    content: '☄'
-}
-
-.viable::before{
-    content: '⥉'
-}
-
-.curious, .surprising, .viable {
-    text-align: center;
-    width: 1.25em;
-    height: 1.25em;
-    border-radius: 1em;
-    color: var(--white);
-    background-color: var(--black);
-    transition: background-color 1.2s;
-}
-
-.curious:hover {
-    background-color: var(--purple);
-}
-
-.surprising:hover {
-    background-color: var(--pink);
-}
-
-.viable:hover {
-    background-color: var(--red);
-}
-
 
 .days {
     max-height: 80vh;
@@ -95,6 +61,48 @@
 .disabled  > *{
     color: var(--black) !important;
     opacity: .4 !important;
+}
+
+/* CRITERIA ICONS */
+
+.curious, .surprising, .viable {
+    text-align: center;
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 1em;
+    /* color: var(--white); */
+    /* background-color: var(--black); */
+    transition: all 1.2s;
+}
+
+.curious:hover, .surprising:hover, .viable:hover {
+
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.curious::before{
+    content: '⎌'
+}
+
+.surprising::before{
+    content: '☄'
+}
+
+.viable::before{
+    content: '⥉'
+}
+
+.curious {
+    color: var(--purple);
+}
+
+.surprising {
+    color: var(--pink);
+}
+
+.viable {
+    color: var(--red);
 }
 
 
