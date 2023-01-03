@@ -1,0 +1,12 @@
+body {
+ display: flex;
+ height: 80vh;
+ align-items: center;
+ justify-content: center;   
+}
+
+#drawing {
+   width: 600px;
+   flex-direction: row;
+   justify-content: space-evenly;
+}

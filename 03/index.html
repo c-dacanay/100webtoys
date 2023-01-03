@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>3/100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+    <div class="nav">
+        <a class="next" href="../02/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 3/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about">about the project</a></small>
+        </div>
+        <a class="next" href="../04/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+<script>
+    window.addEventListener("load", setDraw, false)
+
+    function setDraw() {
+
+    const container = document.createElement("div");
+    container.setAttribute("id", "drawing")
+
+
+    document.body.appendChild(container)
+
+    for (let i=0; i < 600; i ++) {
+    const cell = document.createElement("INPUT")
+    cell.setAttribute("type", "checkbox");
+        console.log('yo')
+    container.appendChild(cell)
+    }
+
+    const checks = document.querySelectorAll('input');
+
+    for (const check of checks) {
+        check.addEventListener("mouseover", updateCheck)
+    }
+
+    function updateCheck() {
+        if (this.checked) {
+            this.checked = false;
+        } else {
+            this.checked = true;
+        }
+    }
+}
+</script>
+</html>
