@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>4/100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+<div class="wrapper" id="container">
+</div>
+<div class="buttons">
+    <button id="remix" onclick="getImg(boxes)">randomize</button>
+    <button id="done" onclick="done()">finish</button>
+</div>
+    <div class="nav">
+        <a class="next" href="../index.html"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 4/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../01/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+<script>
+    window.addEventListener("load", makeGrid, false)
+
+    // this has gotta be a bad idea
+    let boxes = null;
+    let finished = null;
+
+    function makeGrid() {
+        const container = document.getElementById("container")
+        // make the boxes
+        // 33
+        for (let i=0; i < 16; i ++) {
+        const box = document.createElement("div")
+        box.classList.add("peek")
+        box.classList.add("move")
+        box.addEventListener("click", changeImg)
+        container.appendChild(box)
+        }
+
+        boxes = document.querySelectorAll(".peek");
+        getImg(boxes);
+    }
+
+
+    function done() {
+        document.getElementById("remix").disabled = true;
+        document.getElementById("done").disabled = true;
+        finished = true;
+        for (box of boxes) {
+            box.style.filter = "grayscale(0)";
+            box.classList.remove("move")
+        }
+    }
+
+    // set images
+    function getImg(array) {
+    for (item of array) {
+        let img = getRandom(0, 40)
+        item.style.backgroundImage = `url('../img/${img}.jpg')`
+    }
+    }
+
+    //this is also silly but w/e
+    function changeImg() {
+    if (!finished){
+        let img = getRandom(0, 40)
+        this.style.backgroundImage = `url('../img/${img}.jpg')`
+    }
+    }
+
+    function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+    }
+
+</script>
+</script>
+</html>

@@ -1,0 +1,57 @@
+html, body {
+    background-color: var(--black) !important;
+    color: white !important;
+}
+
+.wrapper {
+    display: flex;
+    height: 75vh;
+    gap: .5em;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: all 1s;
+    margin:0px auto;
+}
+
+.peek {
+    border: 1px var(--white) solid;
+    width: 11vw;
+    filter: grayscale(1);
+    background-size: cover;
+    transition: width 1s ease-in-out, filter 1s ease-in-out;
+}
+
+.move:hover {
+    filter: grayscale(0);
+    width: 12vw;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1em;
+    gap: .5em;
+}
+
+button {
+    width: 9em;
+    text-transform: uppercase;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: .5em;
+    border-radius: .25em;
+}
+
+button:hover {
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+button:disabled {
+    background-color: var(--black);
+    color: var(--white);
+    border: 1px var(--white) solid;
+    opacity: .5;
+}
