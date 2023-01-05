@@ -1,0 +1,32 @@
+input {
+    padding: .5em 1em .5em 1em;
+    position: absolute;
+    background-color: var(--white);
+    font-size: 18px;
+    border: 1px solid var(--pink);
+    border-radius: 2em;
+}
+
+input:hover {
+    background-color: var(--yellow);
+}
+.wrapper {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gottem {
+    padding: 2em;
+    border: 1px solid var(--pink);
+    border-radius: 2em;
+    z-index: 2;
+    text-align: center;
+    display: none;
+}
+
+#winner {
+    margin-top: .5em;
+}
