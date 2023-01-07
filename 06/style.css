@@ -1,12 +1,12 @@
 body, html {
     background-color: var(--black) !important;
     color: var(--white) !important;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .wrapper {
     display: flex;
-    width: 97vw;
+    width: 90vw;
     height: 89vh;
     align-items: center;
     gap: 0;

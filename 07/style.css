@@ -1,0 +1,45 @@
+html {
+    overflow: hidden;
+}
+
+#stampbox {
+    top: 77vh;
+    position: relative;
+    text-align: center;
+}
+
+#paper {
+    width: 99vw;
+    height: 76vh;
+    position: absolute;
+}
+
+.stamp {
+    position: absolute;
+}
+
+button {
+    font-size: 3em;
+    width: 70px;
+    margin: .15em .15em 0em .15em;
+    border-radius: .3em;
+    background-color: var(--white);
+}
+
+#s0:hover {
+    background-color: var(--green);
+}
+
+#s1:hover {
+    background-color: var(--red);
+}
+
+#s2:hover {
+    background-color: var(--purple);
+}
+#s3:hover {
+    background-color: var(--blue);
+}
+#s4:hover {
+    background-color: var(--pink);
+}
