@@ -1,0 +1,26 @@
+.wrapper, .split {
+    border: 1px solid var(--black);
+    transition: all .5s;
+}
+.wrapper {
+    display: flex;
+    gap: 1em;
+    height: 86vh;
+    padding: 1em;
+}
+
+.split {
+    display: flex;
+    gap: .5em;
+    flex-grow: 1;
+    padding: 1em;
+}
+
+.split:hover {
+    border-radius: 2em;
+    filter: grayscale(1)
+}
+
+#splitMain:hover {
+    background-color: var(--black);
+}

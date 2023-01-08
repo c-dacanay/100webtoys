@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>8/100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+<div class="wrapper split" id="splitMain">
+</div>
+    <div class="nav">
+        <a class="next" href="./07/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 8/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about">about the project</a></small>
+        </div>
+        <a class="next" href="./09/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+<script>
+
+init();
+
+let mainsplit = false;
+
+function init() {
+    let divs = document.getElementById("splitMain")
+    divs.addEventListener("click", createSplit)
+}
+
+//this is silly
+// create the first split once
+function createSplit() {
+    if (mainsplit) {
+        console.log('skip')
+    } else {
+    let div = document.createElement('div');
+    div.classList.add("split")
+    let img = getRandom(0, 40)
+    div.style.backgroundImage = `url('../img/${img}.jpg')`
+    this.append(div)
+    div.addEventListener("click", split);
+    mainsplit = true;
+    console.log('change')
+    }
+}
+
+
+//I want this to handle actually creating more divs in the children divs buut it seems more difficult than I expected lol
+function split() {
+    let div = document.createElement('div');
+    let img = getRandom(0, 40)
+    div.style.backgroundImage = `url('../img/${img}.jpg')`
+    div.classList.add("split")
+    this.appendChild(div)
+    div.addEventListener("click", createSplit);
+}
+
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+</script>
+</html>
