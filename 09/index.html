@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../core.css">
     <link rel="icon" href="../favicon.svg">
-    <title>0 / 100</title>
+    <title>9/100</title>
 </head>
 
 <!-- Before posting:
@@ -18,8 +18,8 @@
 -->
 
 <body>
-        <img id="edit" src="../img/37.JPG">
 
+<div class="wrapper">
         <div class="inputs">
         <div class="in">
             <input type="range" id="blur" name="blur"
@@ -38,17 +38,19 @@
             min="0" max="1" value="0" step=".01">
             <label for="sepia">Sepia</label>
             </div>
+
+        <button onclick="showTarget()">show target</button>
         </div>
-
-
-        
+        <img id="edit" src="../img/37.JPG">
+    </div>
+    <img id="target" src="../img/37.JPG">     
 
     <div class="nav">
-        <a class="next" href="../index.html"><h1>⬅</h1></a>
-        <div class="details"><small>⟡ 0/<a href="../index.html">100</a> ⟡</small>
+        <a class="next" href="../08/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 9/<a href="../index.html">100</a> ⟡</small>
         <small id="about"><a href="../about">about the project</a></small>
         </div>
-        <a class="next" href="../01/"><h1>⮕</h1></a>
+        <a class="next" href="../10/"><h1>⮕</h1></a>
     </div>
 </body>
 
@@ -57,6 +59,7 @@
     let blur = document.getElementById("blur");
     let sepia = document.getElementById("sepia");
     let hue = document.getElementById("hue");
+    let target = document.getElementById("target");
 
 
     blur.addEventListener("input", update);
@@ -64,8 +67,22 @@
     hue.addEventListener("input", update);
 
     function update() {
-        console.log(sepia.value)
+        if (target.style.display === "block") {
+            target.style.display = "none";
+        }
+        console.log(blur.value, sepia.value, hue.value)
         picture.style.filter = `blur(${blur.value}px) sepia(${sepia.value}) hue-rotate(${hue.value}deg)`;
+    
+    }
+
+    function showTarget() {
+        if (target.style.display === "none") {
+            target.style.display = "block";
+            console.log('block')
+        } else {
+            target.style.display = "none";
+            console.log('none')
+        }
     }
 </script>
 </html>
