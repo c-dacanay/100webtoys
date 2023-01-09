@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>0 / 100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+        <img id="edit" src="../img/37.JPG">
+
+        <div class="inputs">
+        <div class="in">
+            <input type="range" id="blur" name="blur"
+                   min="0" max="10" value="0" step=".5">
+            <label for="blur">Blur</label>
+        </div>
+
+        <div class="in">
+            <input type="range" class="slider" id="hue" name="hue"
+            min="0" max="360" value="0" step="10">
+            <label for="hue">Hue-Rotate</label>
+        </div>
+
+        <div class="in">
+            <input type="range" id="sepia" name="sepia"
+            min="0" max="1" value="0" step=".01">
+            <label for="sepia">Sepia</label>
+            </div>
+        </div>
+
+
+        
+
+    <div class="nav">
+        <a class="next" href="../index.html"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 0/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about">about the project</a></small>
+        </div>
+        <a class="next" href="../01/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+<script>
+    let picture = document.getElementById("edit");
+    let blur = document.getElementById("blur");
+    let sepia = document.getElementById("sepia");
+    let hue = document.getElementById("hue");
+
+
+    blur.addEventListener("input", update);
+    sepia.addEventListener("input", update);
+    hue.addEventListener("input", update);
+
+    function update() {
+        console.log(sepia.value)
+        picture.style.filter = `blur(${blur.value}px) sepia(${sepia.value}) hue-rotate(${hue.value}deg)`;
+    }
+</script>
+</html>
