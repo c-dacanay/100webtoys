@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>10/100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+
+    <article class="text">
+        <p id="story">sup bb</p>
+    </article>
+    <article class="comic">
+    <article id="triptych">
+        <article class="window">
+            <article class="circle"><p class="hide">one</p></article>
+            <article class="circle"><p class="hide">two</p></article>
+            <article class="circle"><p class="hide">three</p></article>
+        </article>
+        <article class="window" id="center"></article>
+        <article class="window">
+            <article class="circle"><p class="hide">four</p></article>
+            <article class="circle"><p class="hide">five</p></article>
+            <article class="circle"><p class="hide">six</p></article>
+        </article>
+    </article>
+    <article id="diptych">
+        <article class="window" id="narrative">
+            <h2>Lorem Ipsum</h2>
+            <p><strong>Lorem ipsum dolor</strong> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Sit amet justo donec enim diam vulputate ut pharetra sit. Eget gravida cum sociis natoque penatibus et magnis dis. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Est lorem ipsum dolor sit amet consectetur adipiscing. Urna id volutpat lacus laoreet non curabitur gravida arcu ac. Sit amet volutpat consequat mauris nunc congue nisi vitae. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet non. Nulla malesuada pellentesque elit eget. Scelerisque eu ultrices vitae auctor eu. Augue neque gravida in fermentum et. Eu non diam phasellus vestibulum lorem sed.</p>
+
+            <p>Vivamus arcu felis bibendum ut tristique. Varius morbi enim nunc faucibus a pellentesque. Eu volutpat odio facilisis mauris sit amet massa vitae tortor. Mattis rhoncus urna neque viverra. Ut eu sem integer vitae justo eget magna fermentum iaculis. Eget velit aliquet sagittis id. Mauris ultrices eros in cursus turpis massa. Nunc sed id semper risus in hendrerit gravida rutrum. Eget sit amet tellus cras adipiscing. Tellus rutrum tellus pellentesque eu tincidunt. Blandit volutpat maecenas volutpat blandit. Tortor dignissim convallis aenean et tortor at risus. Id ornare arcu odio ut sem nulla pharetra diam.</p>
+
+            <p>Sit amet est placerat in egestas erat imperdiet sed euismod. Fringilla ut morbi tincidunt augue interdum velit euismod. Ullamcorper sit amet risus nullam eget felis eget nunc. Convallis posuere morbi leo urna molestie at elementum eu facilisis. Purus non enim praesent elementum. Et pharetra pharetra massa massa ultricies mi quis. Faucibus et molestie ac feugiat. A scelerisque purus semper eget duis at. Tristique senectus et netus et malesuada fames ac turpis egestas. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. At tempor commodo ullamcorper a lacus vestibulum. Enim ut tellus elementum sagittis vitae. Cursus euismod quis viverra nibh cras.</p>
+
+            <p>Sociis natoque penatibus et magnis dis parturient montes. Sed velit dignissim sodales ut eu. Fames ac turpis egestas sed tempus urna et. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Pharetra sit amet aliquam id. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Enim sit amet venenatis urna cursus eget nunc scelerisque. Nunc sed velit dignissim sodales ut eu sem. Orci a scelerisque purus semper eget duis at tellus. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Ac ut consequat semper viverra nam libero. Purus sit amet volutpat consequat mauris nunc congue nisi vitae. Nunc aliquet bibendum enim facilisis. Tellus cras adipiscing enim eu turpis egestas pretium aenean. Pharetra et ultrices neque ornare aenean euismod elementum nisi. Quis lectus nulla at volutpat diam ut venenatis tellus in.</p>
+
+        </article>
+        <article class="window"></article>
+    </article>
+    </article>
+
+    <div class="nav">
+        <a class="next" href="../09/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 10/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about">about the project</a></small>
+        </div>
+        <a class="next" href="../11/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+<script>
+ let windows = document.querySelectorAll(".window");
+ let circles = document.querySelectorAll(".circle");
+ let story = document.getElementById("story");
+ let center = document.getElementById("center");
+ let trip = document.getElementById("triptych");
+ let dip = document.getElementById("diptych")
+ let show = false;
+
+windows.forEach(getImg);
+circles.forEach(getImg);
+circles.forEach(el => {
+    el.addEventListener('mouseover', read);
+    el.addEventListener('mouseout', forget);
+})
+
+center.addEventListener('click', showDiptych)
+dip.addEventListener('click', showTrip)
+
+function showDiptych() {
+        trip.style.display = "none"
+        dip.style.display = "flex"
+        story.innerHTML = " ";
+        console.log('none')
+}
+
+function showTrip() {
+    trip.style.display = "flex"
+        dip.style.display = "none"
+        story.innerHTML = "ya we doin something";
+}
+
+function getImg(el) {
+    // set image
+    if (el.id == "narrative") {
+    console.log('skip')
+    }else {
+    let img = getRandom(0, 40)
+    el.style.backgroundImage = `url('../img/${img}.JPG')`
+    }
+}
+
+function read() {
+    story.innerHTML = this.textContent;
+}
+
+function forget() {
+    story.innerHTML = "default";
+}
+
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+</script>
+</html>

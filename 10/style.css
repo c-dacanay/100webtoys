@@ -1,0 +1,87 @@
+html, body {
+    background-color: var(--black);
+    color: var(--white) !important;
+}
+.text {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    color: var(--white);
+    justify-content: center;
+    background-color: var(--black);
+}
+
+.text > p {
+    font-size: 1.25em;
+}
+
+.window, .circle {
+    border: 5px solid var(--black);
+    filter: grayscale(1);
+    background-size: 100%;
+}
+
+#triptych, .window, #diptych {
+    display: flex;
+    padding: 1em;
+    flex-grow: 1;
+    gap: 1em;
+    justify-content: center;
+}
+
+.window {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 0px px 10px var(--black) inset;
+    transition: all 2s;
+}
+
+.comic {
+    height: 79vh;
+    display: flex;
+    background-color: var(--black);
+    transition: all .5s;
+}
+
+#triptych, #diptych {
+    flex-grow: 1;
+}
+
+#diptych {
+    display: none;
+}
+
+#diptych > .window {
+    max-width: 45vw;
+    filter: saturate(200%);
+}
+
+#narrative {
+    filter: grayscale(1) !important;
+    color: var(--white);
+    display: block;
+    overflow-y: scroll;
+}
+.hide {
+    display: none;
+}
+
+.circle {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 100%;
+    background-size: 20vh;
+    box-shadow: 0px 0px 50px 150px var(--black) inset;
+}
+.window:hover, .circle:hover {
+    filter: grayscale(0);
+}
+
+.window:hover {
+    background-size: 400%;
+}
+
+.circle:hover {
+    box-shadow: 0px 0px 0px 0px var(--black) inset;
+}
