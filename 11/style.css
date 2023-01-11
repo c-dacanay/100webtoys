@@ -1,0 +1,103 @@
+html {
+    background-color: var(--black);
+}
+
+.nav {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+p {
+    color: var(--white) !important;
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    height: 86vh;
+    overflow:hidden;
+    top: 0;
+}
+
+#bg {
+    width: 2000px;
+    image-rendering: crisp-edges;
+    filter: blur(1.5em) hue-rotate(80deg) contrast(1.5);
+    transition: all 1s ease-in-out;
+}
+
+.lessblur {
+    filter: blur(0em) hue-rotate(80deg) contrast(1.5)!important;
+}
+
+.frame {
+    background-color: var(--black);
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top, .bottom {
+    height: 10em;
+    width: 100vw;
+}
+
+.top {
+    flex-direction: column;
+    top: 0;
+}
+
+.bottom {
+    top: 74vh;
+}
+
+.left, .right {
+    flex-direction: row;
+    top: 4em;
+    width: 20em;
+    height: 74vh;
+}
+
+.right {
+    left: 80vw;
+}
+
+#range_x {
+    width:400px;
+}
+
+#range_y, #zoom {
+    appearance: slider-vertical;
+    height: 400px;
+    margin: 0;
+}
+
+#mobile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    color: var(--red)
+}
+
+@media only screen
+and (max-width: 750px)
+ {
+
+  .container {
+    display: none;
+  }
+
+  .frame {
+    display: none;
+  }
+
+}
