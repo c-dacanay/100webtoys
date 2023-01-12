@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>12/100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+    <div class="wrapper">
+        <div class="slide" id="boss">
+            <div class="child circle"></div>
+            <div class="child"><div class="rotate">❖</div></div>
+            <div class="child circle"></div>
+            <div class="child"><div class="rotate">❖</div></div>
+            <div class="child circle"></div>
+            <div class="child"><div class="rotate">❖</div></div>
+        </div>
+        <div class="r-slide" id="shrink">
+            <div class="r-slide" id="tall">
+                <div class="r-child circle white"></div>
+                <div class="r-child"></div>
+                <div class="r-child circle white"></div>
+                <div class="r-child"></div>
+                <div class="r-child circle white"></div>
+            </div>
+            <div class="r-slide" id="small">
+                <div class="r-child "></div>
+                <div class="r-child circle white"></div>
+                <div class="r-child"></div>
+                <div class="r-child circle white"></div>
+                <div class="r-child"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <a class="next" href="../index.html"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 12/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about">about the project</a></small>
+        </div>
+        <a class="next" href="../01/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+<script>
+let boss = document.getElementById("boss")
+let tall = document.getElementById("tall")
+let small = document.getElementById("small")
+
+document.onmousemove = slides;
+
+function slides(e) {
+    let x = e.clientX;
+    let y = e.clientY;
+    //left panel
+    boss.style.width = x + 'px';
+
+    // right panel
+    // these the num values are guess and check lol whoops
+    tall.style.width = (window.innerWidth - (x + 20)) + 'px';
+    tall.style.height = y + 'px';
+    small.style.height = (window.innerHeight - (y + 97)) + 'px';
+    console.log(small.style.height)
+}
+
+</script>
+</html>
