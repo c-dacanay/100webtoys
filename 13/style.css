@@ -1,0 +1,46 @@
+html, body {
+    overflow: hidden;
+    background: var(--black) !important;
+    color: var(--white) !important;
+}
+
+.nav {
+    background-color: var(--black) !important;
+}
+
+#container {
+    padding-top: .5em;
+    gap: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rotate {
+    font-size: 10vw;
+    background-color: var(--white);
+    padding: 0em .18em 0em .18em;
+    border-radius: 100%;
+    height: fit-content;
+    transition: animation 1s ease;
+}
+
+
+.rotate {
+    animation: vibe 5s linear infinite;
+}
+
+.rotate:hover {
+    animation: vibe 1s linear infinite;
+}
+
+
+@keyframes vibe {
+    0%{
+       transform: rotate(0deg);
+      }
+   100%{
+       transform: rotate(360deg);
+      }
+   }
