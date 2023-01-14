@@ -1,0 +1,27 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 88vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50vw;
+}
+
+#cursor {
+    position: absolute;
+    font-size: 30px;
+    top: 10em;
+    left: 0;
+    opacity: .33;
+}
+
+#cursor > p {
+-webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
