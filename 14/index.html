@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../core.css">
     <link rel="icon" href="../favicon.svg">
-    <title>0 / 100</title>
+    <title>14/100</title>
 </head>
 
 <!-- Before posting:
@@ -21,16 +21,16 @@
     <div id="cursor"><p>➚</p></div>
     <div class="wrapper">
         <div class="present"><button id="click" onclick="next()">first click me</button></div>
-        <div class="present"><button id="mbutton" disabled >then click me</button></div>
+        <div class="present"><button id="mbutton" class="dis" >then click me</button></div>
         
         </div>
 
     <div class="nav">
-        <a class="next" href="../01/"><h1>⬅</h1></a>
-        <div class="details"><small>⟡ 0/<a href="../index.html">100</a> ⟡</small>
+        <a class="next" href="../13/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 14/<a href="../index.html">100</a> ⟡</small>
         <small id="about"><a href="../about/">about the project</a></small>
         </div>
-        <a class="next" href="../01/"><h1>⮕</h1></a>
+        <a class="next" href="../15/"><h1>⮕</h1></a>
     </div>
 </body>
 
@@ -48,9 +48,15 @@ document.onmousemove = (evt) => {
 }
 
 function next() {
-    btn.disabled = true;
-    mbtn.disabled = false;
-    mirror.style.opacity = 1;
+    if (mbtn.classList.contains("dis")) {
+        btn.classList.add("dis")
+        mbtn.classList.remove("dis")
+        mirror.style.opacity = 1; 
+    } else {
+        btn.classList.remove("dis")
+        mbtn.classList.add("dis")
+        mirror.style.opacity = .33;     
+    }
 }
 </script>
 </html>

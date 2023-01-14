@@ -13,6 +13,10 @@ html, body {
     gap: 50vw;
 }
 
+.dis {
+    opacity: .33;
+}
+
 #cursor {
     position: absolute;
     font-size: 30px;
