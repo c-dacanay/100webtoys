@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>15 / 100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+    <div class="wrapper">
+        <div class="item">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick wide"></div>
+            <div class="brick wide"></div>
+        </div>
+        <div class="item">
+            <div class="brick"></div>
+            <div class="brick wide"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            
+        </div>
+        <div class="item">
+            <div class="brick"></div>
+            <div class="brick wide"></div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <a class="next" href="../14/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 15/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../13/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+
+<script>
+    let colors = ['#E298E4', '#2e94b0', '#B6FF8E', 'FBFF7B', '#7B67F3', '#FA5F66', '#292B2C']
+    let shapes = ['20px 400px 20px', '400px 20px', '200px', '250px 0px 0px 0px', '0px 250px 0px 0px']
+    let sindex = 0;
+    let cindex = 0;
+
+    let bricks = document.querySelectorAll(".brick")
+
+    bricks.forEach(item => {
+    item.addEventListener('mouseover', event => {
+        event.target.style.borderRadius = shapes[sindex];
+        if (sindex < shapes.length) { sindex++ } else { sindex = 0; }
+        })
+    item.addEventListener('click', event => {
+        event.target.style.backgroundColor = colors[cindex];
+        if (cindex < colors.length) { cindex++ } else { cindex = 0; }
+        })
+    })
+</script>
+</html>

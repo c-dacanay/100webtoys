@@ -1,0 +1,32 @@
+.wrapper {
+    width: 99vw;
+    height: 86vh;
+    gap: .2em;
+    flex-flow: column wrap;
+}
+
+.wrapper, .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    width: 50vw;
+    gap: .2em;
+    flex-flow: row wrap;
+}
+.brick {
+    flex: 1;
+    height: 10em;
+    background-color: var(--red);
+    transition: border-radius .5s ease-in-out;
+}
+
+/* .brick:hover {
+    border-radius: 0px 250px 0px 0px;
+} */
+
+.wide {
+    flex: 3;
+}
