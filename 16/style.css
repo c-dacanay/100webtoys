@@ -1,0 +1,51 @@
+body, html, .wrapper {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 99vw;
+    height: 86vh;
+    gap: .5em;
+    flex-flow: column wrap;
+}
+
+.wrapper, .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    width: 50vw;
+    gap: .5em;
+    flex-flow: row wrap;
+}
+.brick {
+    flex: 1;
+    height: 10em;
+    filter: grayscale(1) contrast(1.5);
+    border: 2px var(--black) solid;
+    transition: all .5s ease-in-out;
+}
+
+.brick:hover {
+    filter: grayscale(0) contrast(1.5);
+}
+
+#main {
+    width: 100vw;
+    height: 88vh;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    object-fit:fill;
+    transition: all .75s ease-in;
+}
+
+.wide {
+    flex: 3;
+}

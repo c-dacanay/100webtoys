@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>16 / 100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+    <div id="main"></div>
+    <div class="wrapper">
+        <div class="item">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick wide"></div>
+            <div class="brick wide"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="item">
+            <div class="brick wide"></div>
+            <div class="brick wide"></div>
+            <div class="brick"></div>
+            
+        </div>
+        <div class="item">
+            <div class="brick"></div>
+            <div class="brick wide"></div>
+            <div class="brick"></div>
+            <div class="brick wide"></div>
+            <div class="brick"></div>
+        </div>
+
+    </div>
+
+
+    <div class="nav">
+        <a class="next" href="../15/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 16/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../17/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+
+<script>
+    let shapes = ['20px 400px 20px', '400px 20px', '200px', '250px 0px 0px 0px', '0px 250px 0px 0px']
+    let main = document.getElementById("main");
+    let bricks = document.querySelectorAll(".brick");
+
+    bricks.forEach(item => {
+
+        // make a random shape and img for each brick
+        let shape = getRandom(0, shapes.length)
+        item.style.borderRadius = shapes[shape];
+
+        let img = getRandom(0, 40)
+        item.style.backgroundImage = `url('../img/${img}.JPG')`
+
+        // make the main item appear on click
+        item.addEventListener('click', e => {
+        main.style.opacity = 1;
+        main.style.zIndex = 10;
+        main.style.backgroundImage = e.target.style.backgroundImage;
+        })
+    })
+
+    main.addEventListener('click', e => {
+        main.style.zIndex = 0;
+        main.style.opacity = 0;
+        setTimeout(() => {
+            main.style.backgroundImage = "none";
+            }, "1000")
+
+    })
+
+    function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+    }
+</script>
+</html>
