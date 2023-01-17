@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>17 / 100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+    <div class="wrapper">
+        <div class="input">
+        
+        <!-- <h1>Band Poster</h1> -->
+        
+        <div class="unit">
+            <label for="band">Band Name</label>
+            <input type="text" id="name" name="name" required
+            size="20" placeholder="Premium Rush">
+        </div>
+        <div class="unit">
+            <label for="time">Time</label>
+            <input type="time" id="set" name="set"
+            min="09:00" max="18:00" required>
+        </div>
+        <div class="unit">
+            <label for="venue">Venue</label>
+            <input type="text" id="venue" name="name" required
+            size="20" placeholder="Meowkitty Bushwick">
+        </div>
+        <!-- <div class="unit">
+            <label for="vibe-select">Choose a Vibe:</label>
+            <select name="vibe" id="vibe-select">
+                <option value="null">--Please choose an option--</option>
+                <option value="anime">Anime Ambient</option>
+                <option value="break">Breakcore</option>
+                <option value="chip">Chiptune</option>
+                <option value="death">Deathgrind</option>
+                <option value="eth">Ethereal Folk</option>
+                <option value="cant">You Can't Define Our Music</option>
+            </select>
+        </div>     -->
+
+        <button onclick="setInputs()">Submit</button>
+    </div>
+        <div class="output">
+            <div class="poster">
+                <marquee class="bname" direction="right"> Premium Rush</marquee>
+                <div class="p-content">
+                    <div class="p-info">
+                        <hr>
+                        <h1 class="bname">Premium Rush</h1>
+                        <h3 id="setvenue">Meowkitty Bushwick</h3>
+                        <div class="details">
+                            <p>1/17/2023</p>
+                            <p id="settime">7:30PM</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- <div class="p-vibes">
+
+                    </div> -->
+                </div>
+                <marquee class="bname">Premium Rush</marquee>
+                </div>
+        </div>
+    </div>
+
+
+    <div class="nav">
+        <a class="next" href="../16/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 18/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../18/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+<script>
+    let bandName = document.querySelectorAll(".bname");
+    let bandInput = document.getElementById("name");
+    let timeInput = document.getElementById("set");
+    let venueInput = document.getElementById("venue");
+    let setTime = document.getElementById("settime");
+    let venueName = document.getElementById("setvenue");
+
+
+
+function setInputs() {
+    //band name
+    let btext = bandInput.value;
+    bandName.forEach(item => {
+        item.innerHTML = btext;
+    })
+
+    //date
+    setTime.innerHTML = timeInput.value;
+    venueName.innerHTML = venueInput.value;
+
+}
+
+</script>
+</html>
