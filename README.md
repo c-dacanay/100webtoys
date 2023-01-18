@@ -1,24 +1,28 @@
-##Favorite Unicodes
+## Favorite Unicodes
 
 NAV: ⬅ ⟡ ⮕
+
 CURIOUS: ⎌
+
 SURPRISING: ☄
+
 VIABLE: ⥉
 
 STARS: ✦❉✵✧❉✺✶
+
 CLOUD: ☁
-❖
-⚐
-⁂
-❅
-✄
-✐
+
 FLOWERS: ❀ ✥ ❁ ❊ ⚘
-UTILS:
-☞☟☜
+
+VARIOUS: ❖ ⚐ ⁂ ❅ ✄ ✐
+
+UTILS: ☞☟☜
 
 STRINGS:
- + ~ : ~ : ~ + ~ . ~ ✶ ~ + . ~ . ✧ ~ + * ~ .
++ ~ : ~ : ~ + ~ . ~ ✶ ~ + . ~ . ✧ ~ + * ~ .
+
 ✺ * ✺ * ✺ * ✺ * ✺ * ✺
+
 ٭ * ٭ * ٭ * ٭ * ٭ * ٭ * ٭
+
 ✶ ✧ ✶ ✧ ✶ ✧ ✶ ✧ ✶ ✧ ✶
