@@ -11,7 +11,9 @@
         var sites = generateBeeHivePoints(view.size / 230, true);
         var bbox, diagram;
         var oldSize = view.size;
-        var spotColor = new Color('#2e94b0');
+        var colors = ['#E298E4', '#B6FF8E', '#FBFF7B', '#7B67F3', '#FA5F66', '#292B2C', '#2e94b0'];
+        var col = 0;
+        var spotColor = new Color(colors[col]);
         var mousePos = view.center;
         var selected = false;
 
@@ -123,8 +125,17 @@
 
         function onKeyDown(event) {
             if (event.key == 'space') {
-                selected = !selected;
-                renderDiagram();
+                <!-- selected = !selected; -->
+                console.log('col', col)
+                if (col < (colors.length-1)) {
+                spotColor = new Color(colors[col]);
+                col++;
+                } else {
+                    spotColor = new Color(colors[col]);
+                    col = 0;
+
+                }
+                <!-- renderDiagram(); -->
             }
         }
     </script>
@@ -134,12 +145,7 @@
     <title>18/100</title>
 </head>
 
-<!-- Before posting:
-- Did you change the before and after arrows?
-- Did you change the title? how about the bottom numbers?
-- Did you cite code?
-- Did you change the homepage? (you can save this for later)
--->
+<!-- Code Credit: this is 99% the voroni example from paper.js lol -->
 
 <body>
     <canvas id="canvas" resize></canvas>
