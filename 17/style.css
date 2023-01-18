@@ -51,19 +51,19 @@
     gap: 1em;
 }
 
-.details {
+.p-details {
     font-size: 1.25em;
     display: flex;
-    flex-flow: row !important;
-    gap: 1em !important;
+    flex-flow: row;
+    gap: 1em;
     justify-content: center;
 }
 
-.details:before, .details:after {
+.p-details:before, .p-details:after {
     content: '✧'
 }
 
-.details > p {
+.p-details > p {
     font-family: 'Courier New', Courier, monospace !important;
 }
 marquee {
