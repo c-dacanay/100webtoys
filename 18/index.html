@@ -8,10 +8,10 @@
     <script type="text/javascript" src="http://paperjs.org/assets/js/rhill-voronoi-core.js"></script>
     <script type="text/paperscript" canvas="canvas">
         var voronoi = new Voronoi();
-        var sites = generateBeeHivePoints(view.size / 200, true);
+        var sites = generateBeeHivePoints(view.size / 230, true);
         var bbox, diagram;
         var oldSize = view.size;
-        var spotColor = new Color('red');
+        var spotColor = new Color('#2e94b0');
         var mousePos = view.center;
         var selected = false;
 
@@ -100,7 +100,8 @@
                     handleOut: vector
                 });
             }
-            path.scale(0.95);
+            <!-- path.scale(0.95); -->
+            path.scale(.99);
             removeSmallBits(path);
             return path;
         }
@@ -130,7 +131,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../core.css">
     <link rel="icon" href="../favicon.svg">
-    <title>18 / 100</title>
+    <title>18/100</title>
 </head>
 
 <!-- Before posting:
@@ -142,12 +143,13 @@
 
 <body>
     <canvas id="canvas" resize></canvas>
+
     <div class="nav">
-        <a class="next" href="../01/"><h1>⬅</h1></a>
-        <div class="details"><small>⟡ 0/<a href="../index.html">100</a> ⟡</small>
+        <a class="next" href="../17/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 18/<a href="../index.html">100</a> ⟡</small>
         <small id="about"><a href="../about/">about the project</a></small>
         </div>
-        <a class="next" href="../01/"><h1>⮕</h1></a>
+        <a class="next" href="../19/"><h1>⮕</h1></a>
     </div>
 </body>
 </html>

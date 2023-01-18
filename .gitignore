@@ -1,6 +1,8 @@
 *x/
 /docs
 /archive
-/node_modules
 /package.json
 /package-lock.json
+.DS_Store
+
+*examples/

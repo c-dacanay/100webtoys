@@ -1,10 +1,5 @@
-| # | File | Description | Tags |
-| ----------- | ----------- | --------------| --------------|
- 00 | [main](/index.html) | main page | viable |
+##Favorite Unicodes
 
-
-<details>
-<summary>Favorite Unicodes</summary>
 NAV: ⬅ ⟡ ⮕
 CURIOUS: ⎌
 SURPRISING: ☄
@@ -27,4 +22,3 @@ STRINGS:
 ✺ * ✺ * ✺ * ✺ * ✺ * ✺
 ٭ * ٭ * ٭ * ٭ * ٭ * ٭ * ٭
 ✶ ✧ ✶ ✧ ✶ ✧ ✶ ✧ ✶ ✧ ✶
-</details>
