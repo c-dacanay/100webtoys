@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>19/100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+    <div class="content">
+        <h2 id="directions">please enable popups and refresh</h2>
+        <input type="button" value="click to play" id="go">
+        <p>(this only works on my screen sry if its weird on yours)</p>
+    </div>
+
+    <div class="nav">
+        <a class="next" href="../18/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 19/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../20/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+<script type="text/javascript">
+let button = document.getElementById("go");
+button.addEventListener('click', listenerFunction)
+let action = play;
+
+function listenerFunction() {
+    action();
+}
+
+function play(){
+// open windows
+window.open("./activity.html","test1",'screenX=100, screenY=100, width=200, height=200, scrollbars=no,resizable=no');
+window.open("./activity.html","test2",'screenX=700, screenY=100, width=200, height=200, scrollbars=no,resizable=no');
+window.open("./activity.html","test3",'screenX=1200, screenY=100, width=200, height=200, scrollbars=no,resizable=no');
+window.open("./activity.html","test4",'screenX=100, screenY=600, width=200, height=200, scrollbars=no,resizable=no');
+window.open("./activity.html","test5",'screenX=700, screenY=600, width=200, height=200, scrollbars=no,resizable=no');
+window.open("./activity.html","test6",'screenX=1200, screenY=600, width=200, height=200, scrollbars=no,resizable=no');
+
+document.body.style.background = '#292B2C'
+document.body.style.color = '#FFFFF1'
+document.getElementById('directions').innerHTML = "match the colors!"
+document.getElementById('go').value = "done!"
+action = done;
+
+}
+
+function done() {
+console.log('nice')
+document.getElementById('directions').innerHTML = "nice"
+document.getElementById('go').value = "play again!";
+document.body.style.background = null;
+// document.body.style.background = 'none';
+document.body.classList.add('party')
+// document.body.style.background = 'linear-gradient(-45deg, #7B67F3, #2e94b0, #B6FF8E)';
+action = reload;
+}
+
+function reload() {
+    location.reload();
+}
+</script>
+</html>
