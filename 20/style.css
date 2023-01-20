@@ -1,0 +1,70 @@
+body {
+    overflow: hidden;
+    margin: 0;
+    color: var(--white) !important;
+}
+
+.nav {
+    z-index: 10;
+}
+
+.blink {
+    height: 70vh;
+    width: 100vw;
+    background-color: var(--black);
+    position: absolute;
+    z-index: 2;
+}
+
+.bottom {
+    top: 82vh;
+    animation: bbottom 4s ease-out infinite;
+}
+
+.top {
+    top: -40vh;
+    animation: btop 4s ease-out infinite;
+}
+
+#surprise {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1vw;
+    animation: blur 4s ease-in-out infinite;
+}
+
+.stars {
+    width: 20vh;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12vw;
+    animation: vibe 4s linear infinite;
+}
+
+.stars:after {
+    content: attr(data-value);
+}
+
+@keyframes blur {
+    0%, 15%, 100% {filter: blur(0)}
+    50%, 75% {filter: blur(15px)}
+}
+
+@keyframes vibe {
+    0%{transform: rotate(0deg);}
+   100%{transform: rotate(360deg);}
+}
+@keyframes bbottom {
+    0%, 15%, 100% {top: 82vh;}
+    50%, 75% {top: 30vh;}
+}
+@keyframes btop {
+    0%, 15%, 100% {top: -65vh;}
+    50%, 75% {top: 0vh;}
+  }
+

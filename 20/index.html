@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>20/100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+<div class="blink top"></div>
+<div class="blink bottom"></div>
+<div id="surprise"></div>
+
+
+    <div class="nav">
+        <a class="next" href="../19/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 20/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../21/"><h1>⮕</h1></a>
+    </div>
+</body>
+<script>
+let colors = ['#FFFFF1','#292B2C', '#E298E4', '#2e94b0', '#7B67F3', '#B6FF8E', '#FBFF7B','#FA5F66'];
+let twinkles = ['✦','❉','✵','✧','❉','✺','✶'];
+let cells = [];
+let sight = document.getElementById("surprise");
+
+for (let i=0; i < 50; i ++) {
+    const cell = document.createElement("div")
+    cell.classList.add('stars')
+    sight.appendChild(cell)
+    cells.push(cell)
+    cell.setAttribute('data-value', '✦')
+}
+
+setInterval( () => {
+    seeStars();
+}, 3310);
+
+function seeStars() {
+    let bcol = colors[getRandom(0, colors.length)];
+    sight.style.backgroundColor = bcol;
+
+    let kira = twinkles[getRandom(0, twinkles.length)];
+    let kcol = colors[getRandom(0, colors.length)];
+    console.log(kira)
+    //make sure bg and stars don't match
+    if (bcol != kcol) {
+        cells.forEach(cell => {
+            cell.setAttribute('data-value', kira);
+            cell.style.color = kcol;
+        })
+    } else {
+        kcol = colors[getRandom(0, colors.length)];
+    }
+    
+
+}
+
+function getRandom(min, max) {
+return Math.floor(Math.random() * (max - min) + min);
+}
+</script>
+</html>
