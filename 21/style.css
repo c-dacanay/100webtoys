@@ -123,10 +123,6 @@ body {
     color: var(--blue);
 }
 
-marquee {
-    color: var(--purple);
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
