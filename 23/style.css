@@ -1,0 +1,68 @@
+body {
+    overflow: hidden;
+    background: url(../img/35.JPG);
+    background-size: cover;
+}
+
+.hitbox {
+    position: absolute;
+    width: 99vw;
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    position: absolute;
+    left: -25%;
+    top: 50%;
+}
+
+.tile {
+  clip-path: url(#polygon); 
+  height: 150vh;
+  width: 150vw;
+  background: url(../img/35.JPG);
+  filter: contrast(120%) saturate(110%);
+  background-size: cover;
+  position: absolute;
+  transform-origin: top center;
+  animation: bgpos 10s ease-in-out infinite;
+}
+
+@keyframes bgpos {
+  0%,100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -100% 100%;
+  }
+}
+
+#hit {
+    position: absolute;
+    z-index: 10;
+    font-size: 3em;
+}
+
+#hit:hover {
+    color: var(--white);
+    cursor: crosshair;
+}
+
+.tile:nth-child(2) {
+  transform: rotate(60deg);
+}
+.tile:nth-child(3) {
+    
+  transform: rotate(120deg);
+}
+.tile:nth-child(4) {
+  transform: rotate(180deg);
+}
+.tile:nth-child(5) {
+  transform: rotate(240deg);
+}
+.tile:nth-child(6) {
+  transform: rotate(-60deg);
+}
