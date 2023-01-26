@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>0 / 100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+    <div class="nav">
+        <a class="next" href="../25/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 26/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../27/"><h1>⮕</h1></a>
+    </div>
+
+    <script src="../node_modules/matter-js/build/matter.js"></script>
+
+    <script>
+    var Engine = Matter.Engine,
+    Render = Matter.Render,
+    Runner = Matter.Runner,
+    Body = Matter.Body,
+    Events = Matter.Events,
+    Composite = Matter.Composite,
+    Composites = Matter.Composites,
+    Constraint = Matter.Constraint,
+    MouseConstraint = Matter.MouseConstraint,
+    Mouse = Matter.Mouse,
+    Bodies = Matter.Bodies;
+
+    // create engine
+    var engine = Engine.create(),
+        world = engine.world;
+
+    // create renderer
+    var render = Render.create({
+        element: document.body,
+        engine: engine,
+        options: {
+            width: window.innerWidth,
+            height: window.innerHeight,
+            showAngleIndicator: false,
+            showCollisions: false,
+            showVelocity: false,
+            background: 'transparent',
+            wireframes: false
+        }
+    });
+
+    Render.run(render);
+    // create runner
+    var runner = Runner.create();
+    Runner.run(runner, engine);
+    //ropes
+    var ropes = [];
+    var colors = ['#2e94b0', '#7B67F3', '#292B2C'];
+    var color = 0;
+    for (let i = 0; i < 15; i++) {
+        group = Body.nextGroup(true);
+        //.stack(xx, yy, columns, rows, columngap, rowgap, callback)
+        var rope = Composites.stack((45*i), 0, 15, .7, 0, 100, function(x, y) {
+            return Bodies.circle(x, y, 15, { collisionFilter: { group: group }, render: {fillStyle: colors[color]} });
+        });
+        //.chain(xx, yy, columns, rows, columnGap, rowGap, callback)
+        Composites.chain(rope, 0.5,0, -0.4, 0, { stiffness: 1, length: .5, render: { type: 'line' } });
+        Composite.add(rope, Constraint.create({ 
+            bodyB: rope.bodies[0],
+            pointB: { x: 0, y: 0 },
+            pointA: { x: rope.bodies[0].position.x, y: rope.bodies[0].position.y },
+        }));
+        ropes.push(rope)
+        if (color > colors.length - 2) {
+            color = 0;
+        } else {
+            color++;
+        }
+    }
+
+    Composite.add(world, ropes)
+
+    // add mouse control
+    var mouse = Mouse.create(render.canvas),
+        mouseConstraint = MouseConstraint.create(engine, {
+            mouse: mouse,
+            constraint: {
+                stiffness: 0.2,
+                render: {
+                    visible: false
+                }
+            }
+        });
+
+    Composite.add(world, mouseConstraint);
+
+    // keep the mouse in sync with rendering
+    render.mouse = mouse;
+
+    // fit the render viewport to the scene
+    Render.lookAt(render, {
+        min: { x: 0, y: 0 },
+        max: { x: 700, y: 600 }
+    });
+
+    </script>
+</body>
+</html>

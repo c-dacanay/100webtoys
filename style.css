@@ -32,14 +32,14 @@
 
 
 .days {
-    max-height: 80vh;
+    max-height: 82vh;
     width: 99vw;
     display: flex;
     flex-flow: column wrap;
 }
 
 .days > * {
-    flex: 1 4em;
+    flex: 1 3em;
 }
 
 
