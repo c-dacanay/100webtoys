@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>24 / 100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+
+    <div class="nav">
+        <a class="next" href="../23/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 24/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../25/"><h1>⮕</h1></a>
+    </div>
+    <script src="../node_modules/matter-js/build/matter.js"></script>
+    <script>
+var Engine = Matter.Engine,
+  Render = Matter.Render,
+  Runner = Matter.Runner,
+  Composites = Matter.Composites,
+  Composite = Matter.Composite,
+  MouseConstraint = Matter.MouseConstraint,
+  Events = Matter.Events,
+  Mouse = Matter.Mouse,
+  World = Matter.World,
+  Constraint = Matter.Constraint,
+  Bodies = Matter.Bodies,
+  Body = Matter.Body;
+  
+// create engine
+var engine = Engine.create(), world = engine.world;
+
+// create renderer
+var render = Render.create({
+  element: document.body,
+  engine: engine,
+  options: {
+    width: window.innerWidth,
+    height: window.innerHeight,
+    wireframes: false,
+    background: 'transparent'
+  }
+});
+
+
+Engine.run(engine);
+
+Render.run(render);
+
+// newtonsCradle(xx, yy, number, size, length)
+var cradleA = Composites.newtonsCradle((window.innerWidth * .2), 5, 6, 80, (window.innerHeight * .5));
+var colors = ['#FBFF7B','#E298E4', '#2e94b0', '#7B67F3', '#B6FF8E','#FA5F66', '#FFFFFA'];
+var color = 0;
+
+//this starts the movement
+Body.translate(cradleA.bodies[0], { x: -100, y: -100 });
+console.log(cradleA)
+
+Events.on(engine, 'collisionStart', function(event) {
+    console.log(color)
+ if (color < colors.length -1) {
+    color++
+ } else {
+    color = 0;
+ }
+
+    cradleA.bodies.forEach(element => {
+        element.render.fillStyle = colors[color];
+    });
+});
+
+    // add mouse control
+    var mouse = Mouse.create(render.canvas),
+        mouseConstraint = MouseConstraint.create(engine, {
+            mouse: mouse,
+            constraint: {
+                // stiffness: 0.2,
+                render: {
+                    visible: false
+                }
+            }
+        });
+
+    Composite.add(world, mouseConstraint);
+
+    // keep the mouse in sync with rendering
+    render.mouse = mouse;
+
+World.add(world, [
+  cradleA,
+]);
+
+       </script>
+</body>
+
+</html>
