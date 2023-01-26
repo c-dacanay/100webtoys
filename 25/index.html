@@ -10,13 +10,6 @@
     <title>25 / 100</title>
 </head>
 
-<!-- Before posting:
-- Did you change the before and after arrows?
-- Did you change the title? how about the bottom numbers?
-- Did you cite code?
-- Did you change the homepage? (you can save this for later)
--->
-
 <body>
 
     <div class="nav">
@@ -30,7 +23,6 @@
     <script>
 var Engine = Matter.Engine,
   Render = Matter.Render,
-  Runner = Matter.Runner,
   Composites = Matter.Composites,
   Composite = Matter.Composite,
   MouseConstraint = Matter.MouseConstraint,
@@ -68,8 +60,8 @@ var color = 0;
 
 //this starts the movement
 Body.translate(cradleA.bodies[0], { x: -100, y: -100 });
-console.log(cradleA)
 
+//sense collision on all bodies
 Events.on(engine, 'collisionStart', function(event) {
     console.log(color)
  if (color < colors.length -1) {
@@ -83,22 +75,22 @@ Events.on(engine, 'collisionStart', function(event) {
     });
 });
 
-    // add mouse control
-    var mouse = Mouse.create(render.canvas),
-        mouseConstraint = MouseConstraint.create(engine, {
-            mouse: mouse,
-            constraint: {
-                // stiffness: 0.2,
-                render: {
-                    visible: false
-                }
+// add mouse control
+var mouse = Mouse.create(render.canvas),
+    mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+            // stiffness: 0.2,
+            render: {
+                visible: false
             }
-        });
+        }
+    });
 
-    Composite.add(world, mouseConstraint);
+Composite.add(world, mouseConstraint);
 
-    // keep the mouse in sync with rendering
-    render.mouse = mouse;
+// keep the mouse in sync with rendering
+render.mouse = mouse;
 
 World.add(world, [
   cradleA,
