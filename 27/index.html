@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../core.css">
     <link rel="icon" href="../favicon.svg">
-    <title>0 / 100</title>
+    <title>27 / 100</title>
 </head>
 
 <!-- Before posting:
@@ -18,13 +18,13 @@
 -->
 
 <body>
-<h3> remove all balls but 1 </h3>
+<h3> remove everything but the hexagon</h3>
     <div class="nav">
-        <a class="next" href="../01/"><h1>⬅</h1></a>
-        <div class="details"><small>⟡ 0/<a href="../index.html">100</a> ⟡</small>
+        <a class="next" href="../26/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 27/<a href="../index.html">100</a> ⟡</small>
         <small id="about"><a href="../about/">about the project</a></small>
         </div>
-        <a class="next" href="../01/"><h1>⮕</h1></a>
+        <a class="next" href="../28/"><h1>⮕</h1></a>
     </div>
 </body>
 
@@ -65,20 +65,21 @@
 
     // add bodies
     Composite.add(world, [
-        Bodies.rectangle(500, 650, 2000, 50, { isStatic: true, render: {fillStyle: '#FFFFFA'} }),
+        //floor and sides
+        Bodies.rectangle(500, 700, 2000, 50, { isStatic: true, render: {fillStyle: '#FFFFFA'} }),
         Bodies.rectangle(0, 0, 10, 1400, { isStatic: true, render: {fillStyle: '#FFFFFA'} }),
         Bodies.rectangle((window.innerWidth -15), 0, 20, 1400, { isStatic: true, render: {fillStyle: '#FFFFFA'} }),
     ]);
 
     // Matter.Composites.stack(xx, yy, columns, rows, columnGap, rowGap, callback) 
     var stack = Composites.stack(10, 0, 30, 8, 0, 0, function(x, y) {
-        return Bodies.circle(x, y, Common.random(15, 80), { restitution: 0.6, friction: 0.1 });
+        return Bodies.circle(x, y, Common.random(15, 80), { restitution: 0.6, friction: 0.1, render: {fillStyle: '#7B67F3'} });
     });
     
     Composite.add(world, [
         stack,
         // Bodies.polygon(700, 460, 3, 60),
-        // Bodies.polygon(400, 460, 5, 60),
+        Bodies.polygon(500, 460, 6, 80, {render: {fillStyle: '#292B2C'}}),
         // Bodies.rectangle(700, 760, 80, 80)
     ]);
 
