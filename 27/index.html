@@ -18,7 +18,7 @@
 -->
 
 <body>
-
+<h3> remove all balls but 1 </h3>
     <div class="nav">
         <a class="next" href="../01/"><h1>⬅</h1></a>
         <div class="details"><small>⟡ 0/<a href="../index.html">100</a> ⟡</small>
@@ -52,9 +52,8 @@
         options: {
             width: window.innerWidth,
             height: window.innerHeight,
-            // showAngleIndicator: true,
             background: 'transparent',
-            wireframe: false
+            wireframes: false
         }
     });
 
@@ -66,19 +65,21 @@
 
     // add bodies
     Composite.add(world, [
-        Bodies.rectangle(700, 700, 2000, 70.5, { isStatic: true })
+        Bodies.rectangle(500, 650, 2000, 50, { isStatic: true, render: {fillStyle: '#FFFFFA'} }),
+        Bodies.rectangle(0, 0, 10, 1400, { isStatic: true, render: {fillStyle: '#FFFFFA'} }),
+        Bodies.rectangle((window.innerWidth -15), 0, 20, 1400, { isStatic: true, render: {fillStyle: '#FFFFFA'} }),
     ]);
 
     // Matter.Composites.stack(xx, yy, columns, rows, columnGap, rowGap, callback) 
-    var stack = Composites.stack(10, 0, 10, 8, 10, 10, function(x, y) {
+    var stack = Composites.stack(10, 0, 30, 8, 0, 0, function(x, y) {
         return Bodies.circle(x, y, Common.random(15, 80), { restitution: 0.6, friction: 0.1 });
     });
     
     Composite.add(world, [
         stack,
-        Bodies.polygon(200, 460, 3, 60),
-        Bodies.polygon(400, 460, 5, 60),
-        Bodies.rectangle(700, 760, 80, 80)
+        // Bodies.polygon(700, 460, 3, 60),
+        // Bodies.polygon(400, 460, 5, 60),
+        // Bodies.rectangle(700, 760, 80, 80)
     ]);
 
     // add mouse control
@@ -105,7 +106,7 @@
     });
 
     // wrapping using matter-wrap plugin
-    var allBodies = Composite.allBodies(world);
+    // var allBodies = Composite.allBodies(world);
 
     for (var i = 0; i < allBodies.length; i += 1) {
         allBodies[i].plugin.wrap = {
