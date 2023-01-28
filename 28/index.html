@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>28 / 100</title>
+    <script src="../node_modules/p5/p5.min.js"></script>
+    <script src="../node_modules/matter-js/build/matter.js"></script>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+<!-- <h3> remove everything but the hexagon</h3> -->
+    <div class="nav">
+        <a class="next" href="../27/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 28/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../29/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+
+<script>
+    var Engine = Matter.Engine,
+    World = Matter.World,
+    Events = Matter.Events,
+    Bodies = Matter.Bodies;
+
+var engine;
+var world;
+var particles = [];
+let wash = true;
+
+function setup() {
+    createCanvas(window.innerWidth, window.innerHeight);
+
+    engine = Engine.create();
+    world = engine.world;
+    world.gravity.y = 1;
+    for(let i = 0;i<520;i++){
+        // let p = new Particle(random(width), random(height), 12);
+        let p = new Particle(random(width), random(height), 15);
+        p.restitution =1;
+        p.friction=1;
+        particles.push(p);
+    }
+    
+
+    let floor = Bodies.rectangle(width/2,height+10,width,20,{isStatic: true});
+    let ceiling = Bodies.rectangle(width/2,-10,width,20,{isStatic: true});
+    let left = Bodies.rectangle(-10,height/2,20,height,{isStatic: true});
+    let right = Bodies.rectangle(width +10,height/2,20,height,{isStatic: true});
+    shape = Bodies.circle(width/2,height/2,width/6);
+    let poly = Bodies.polygon(width/2, height/4, 6, 8, {render: {fillStyle:'#B6FF8E'}});
+
+    floor.restitution=1;
+    ceiling.restitution=1;
+    left.restitution=1;
+    right.restitution=1;
+    World.add(world, [floor, left, ceiling, right,shape, poly]);
+
+}
+function draw() {
+    background('#292B2C');
+    for(let p of particles){
+        p.show();
+    }
+
+    grav();
+    Engine.update(engine);
+}
+
+function mousePressed() {
+    wash = !wash;
+}
+
+function grav() {
+if (wash) {
+    world.gravity.y = (Math.round(sin(frameCount/50))*.75);
+    world.gravity.x = (Math.round(cos(frameCount/50))*.75);
+}else {
+    world.gravity.x = 0;
+    world.gravity.y = 0;
+}
+}
+
+class Particle {
+    constructor(x,y,r){
+        this.body = Bodies.circle(x,y,r);
+        this.body.restitution=1;
+        World.add(world, this.body);
+        this.r = r;
+    }
+    show(){
+        colorMode(HSB, 255);
+        fill(40,(Math.pow(this.body.speed,4)), 255);
+        noStroke();
+        var pos = this.body.position;
+        push();
+        translate(pos.x ,pos.y);
+        circle(0,0,this.r*1.5);
+        pop();
+    }
+}
+</script>
+</html>
