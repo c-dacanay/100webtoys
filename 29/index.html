@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>29 / 100</title>
+</head>
+
+<!-- 
+    I could've done all the text positioning with flex box instead, I think.
+-->
+
+<body>
+    <h3>slow dreams</h3>
+<div class="topnav">
+<div class="frag">⟡</div>
+<div class="frag">⟡</div>
+<div class="frag">⟡</div>
+<div class="frag">⟡</div>
+<div class="frag">⟡</div></div>
+
+<div class="content">
+    <h3 class="left">i felt cool stones upon my feet.<br>
+    something jagged slipped into my heel.<br>
+    i didn't think to call out, but you came.<br>
+    there was no blood.</h3>
+    <img src="../img/10.JPG">
+</div>
+
+<div class="content">
+    <h3 class="right bottom">a child stuck her hand into cold dirt.<br>
+    she crushed a pill bug with her fingers<br>
+    just to see what happened.<br>
+    she ate a worm.</h3>
+    <img src="../img/23.JPG">
+</div>
+
+
+<div class="content">
+    <h3 class="center mid">a person called the office.<br>
+    "when do you plan on coming home?"<br>
+    "I have plans tonight."<br>
+    the air got heavy.<br>
+    neither spoke.
+    </h3>
+    <img src="../img/33.JPG">
+</div>
+
+
+<div class="content">
+    <h3 class="center bottom">someone i'm dating rescued three puppies<br>
+         from the middle of the street.<br>
+         he smiled a broad smile,<br> bathed in sunlight.<br>
+        maybe i like him after all.
+    </h3>
+    <img src="../img/21.JPG">
+</div>
+
+<div class="content">
+    <h3 class="center top">i was out to surf.<br>
+        the waves were cold and choppy<br>
+        but i knew you were watching from the beach<br>
+        (even though i couldn't see you)<br>
+        so i kept trying to catch a wave.
+    </h3>
+    <img src="../img/1.JPG">
+</div>
+
+    <div class="nav">
+        <a class="next" href="../28/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 29/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../30/"><h1>⮕</h1></a>
+    </div>
+</body>
+
+
+<script>
+    let frags = document.querySelectorAll(".frag")
+    let content = document.querySelectorAll(".content")
+    let dream = null;
+
+    for (var i=0; i < frags.length; i++) {
+            let index = i;
+            console.log(index)
+            frags[i].addEventListener("click", function () {
+                console.log(index)
+                showDream(index)
+                dream = index;
+            })
+    }
+
+    function showDream(index) {
+        forget()
+        if (dream != index) {
+        setTimeout(() => {
+            content[index].classList.add('show');
+        }, "500")
+        } else {
+            console.log('not again')
+        }
+    }
+
+    function forget(index) {
+        content.forEach(el => {
+            el.classList.remove('show')
+        })
+    }
+</script>
+</html>
