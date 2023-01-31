@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>30 / 100</title>
+    <script src="../node_modules/matter-js/build/matter.js"></script>
+    <script src="../node_modules/matter-js/build/decomp.js"></script>
+    <script src="../node_modules/matter-js/build/pathseg.js"></script>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" role="img" fill="black" xmlns="http://www.w3.org/2000/svg">
+    <path d="M85.8053 199.608H89.8629L102.543 125.557L173.044 151.931L175.073 148.381L117.252 100.197L175.073 52.52L173.044 48.9696L102.543 74.8368L89.8629 0.785599H85.8053L73.1253 74.8368L2.62451 48.9696L0.595703 52.52L58.4165 100.197L0.595703 148.381L2.62451 151.931L73.1253 125.557L85.8053 199.608Z" fill="black"/>
+    </svg>
+
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" role="img" fill="red" xmlns="http://www.w3.org/2000/svg">
+    <path d="M109.564 160.63L41.4808 209.801L68.3178 129.831L0.0546875 80.4795H83.6274L109.564 0.509064L135.5 80.4795H219.073L150.81 129.831L177.647 209.801L109.564 160.63Z" fill="black"/>
+    </svg>
+
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" role="img" fill="red" xmlns="http://www.w3.org/2000/svg">
+    <path d="M98.2183 196.086L111.406 145.874L147.417 182.899L133.722 133.194L183.428 146.888L146.402 110.877L196.108 98.1968L146.402 85.0096L183.428 48.9984L133.722 62.6928L147.417 13.4944L111.406 50.0128L98.2183 0.30719L85.5383 50.0128L49.5271 13.4944L63.2215 62.6928L13.5159 48.9984L50.5415 85.0096L0.835938 98.1968L50.5415 110.877L13.5159 146.888L63.2215 133.194L49.5271 182.899L85.5383 145.874L98.2183 196.086Z" fill="black"/>
+    </svg>
+
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" role="img" fill="red" xmlns="http://www.w3.org/2000/svg">
+    <path d="M92.3104 194.765H102.962C104.737 183.86 109.555 171.941 117.67 159.007C133.901 133.394 166.615 108.287 194.765 102.454V91.8032C180.817 88.76 167.122 82.42 153.935 73.0368C127.054 54.0168 107.273 25.6136 102.962 0H92.3104C89.7744 13.4408 83.9416 26.3744 74.812 39.5616C56.8064 65.6824 28.6568 84.956 0 91.8032V102.454C14.4552 105.498 29.164 112.598 43.6192 123.503C73.0368 145.566 88.5064 172.955 92.3104 194.765Z" fill="black"/>
+    </svg>
+            
+    <h3>type to see stars</h3>
+    <div class="nav">        
+        <a class="next" href="../29/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 30/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../31/"><h1>⮕</h1></a>
+    </div>
+</body>
+<script>
+
+var Engine = Matter.Engine,
+          Render = Matter.Render,
+          Runner = Matter.Runner,
+          Composite = Matter.Composite,
+          Composites = Matter.Composites,
+          Common = Matter.Common,
+          MouseConstraint = Matter.MouseConstraint,
+          Mouse = Matter.Mouse,
+          Body = Matter.Body,
+          Bodies = Matter.Bodies,
+          Events = Matter.Events
+
+        const engine = Matter.Engine.create();
+        var render = Render.create({
+                element: document.body,
+                engine: engine,
+                options: {
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                    background: 'transparent',
+                    wireframes: false
+                }
+        });
+
+    engine.world.gravity.y = .01;
+    let svgs = document.querySelectorAll("svg > path")
+    let bodies = []
+    let colors = ['#FFFFF1', '#E298E4', '#2e94b0', '#7B67F3', '#B6FF8E', '#FBFF7B','#FA5F66']
+
+//holy shit this took so long
+svgs.forEach(
+    function (path){
+        let v = Bodies.fromVertices(Common.random(100, 800), Common.random(80, window.innerHeight * .8), Matter.Svg.pathToVertices(path, 15), {render: {fillStyle: Common.choose(colors)}})
+        Matter.Body.scale(v, .45, .45)
+        bodies.push(v)
+    }
+)
+
+var explosion = function(engine) {
+        var all = Composite.allBodies(engine.world);
+        for (var i = 0; i < all.length; i++) {
+            var body = all[i];
+            if (!body.isStatic && body.position.y >= (window.innerHeight*.4)) {
+                var forceMagnitude = 0.03 * body.mass;
+                Body.applyForce(body, body.position, {
+                    x: (forceMagnitude + Common.random() * forceMagnitude) * Common.choose([.5, -.5]), 
+                    y: (-forceMagnitude + Common.random() * -forceMagnitude) * 1
+                });
+            }
+        }
+    };
+
+    var timeScaleTarget = 1,
+        counter = 0;
+
+
+    Events.on(engine, 'afterUpdate', function(event) {
+        counter += 1;
+        // every 1.5 sec
+        if (counter >= 60 * 1.5) {
+            // create some random forces
+            explosion(engine);
+            // reset counter
+            counter = 0;
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        console.log('god')
+        let v = Bodies.fromVertices(Common.random((window.innerWidth * .25), (window.innerWidth * .75)), Common.random(0, window.innerHeight * .6), Matter.Svg.pathToVertices(Common.choose(svgs), 15), {render: {fillStyle: Common.choose(colors)}})
+        Body.scale(v, .45, .45)
+        Composite.add(engine.world, v)
+    })
+
+    var mouse = Mouse.create(render.canvas),
+    mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+            // stiffness: 0.2,
+            render: {
+                visible: false
+            }
+        }
+    });
+
+Composite.add(engine.world, mouseConstraint);
+Matter.Composite.add(engine.world, bodies);
+Matter.Runner.run(engine);
+Matter.Render.run(render);
+
+
+</script>
+
+
+</html>

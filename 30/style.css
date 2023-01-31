@@ -1,0 +1,14 @@
+svg {
+    display: none;
+}
+
+body {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+    margin: 0;
+}
+
+h3 {
+    position: absolute;
+    padding-left: 1em;
+}
