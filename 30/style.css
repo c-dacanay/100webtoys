@@ -6,6 +6,7 @@ body {
     background-color: var(--black) !important;
     color: var(--white) !important;
     margin: 0;
+    overflow: hidden;
 }
 
 h3 {
