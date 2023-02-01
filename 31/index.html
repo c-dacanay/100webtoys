@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>31 / 100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+    <div class="nav">
+        <a class="next" href="../30/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 31/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../32/"><h1>⮕</h1></a>
+    </div>
+</body>
+<script>
+
+window.addEventListener("load", init);
+
+    function init() {
+    document.onclick = star;
+    }
+
+    function star(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        let star = document.createElement("div")
+        star.style.left = (x - 5) + "px";
+        star.style.top = (y - 5) + "px";
+        star.classList.add('star')
+        document.getElementsByTagName('body')[0].appendChild(star);
+        setTimeout(function(){
+            star.classList.add('shoot')
+        }, 1000)
+        setTimeout(function(){
+            star.style.display = "none"
+        }, 1500)
+        
+    }
+    </script>
+</html>

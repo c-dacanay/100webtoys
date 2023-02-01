@@ -1,0 +1,25 @@
+body {
+    color: var(--white) !important;
+    margin: 0;
+    overflow: hidden;
+    background-image: url('./sky.gif');
+    background-size: 100%;
+}
+
+.star {
+    width: 8px;
+    height: 8px;
+    border-radius: 3em;
+    position: absolute;
+    background-color: var(--white);
+    box-shadow: 0 0 10px 2px var(--white);
+    transition: all .5s ease-in;
+}
+
+.shoot {
+    top: 0px !important;
+    left: 2000px !important;
+    animation-delay:2.75s ;
+    animation-duration: 2.25s;
+}
+
