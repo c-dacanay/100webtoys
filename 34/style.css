@@ -1,0 +1,35 @@
+body {
+    overscroll-behavior: none;
+    margin: 0;
+    background-color: black !important;
+    color: var(--white) !important;
+}
+
+#runner {
+    padding: 2em;
+    font-size: .5em;
+    text-align: right;
+    position: sticky;
+    line-height: 1.5em;
+    top: 1em;
+}
+
+.scroll-bound {
+	height: 500vh;
+}
+
+.content {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2em;
+}
+
+video {
+    filter: brightness(4)
+}
