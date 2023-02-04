@@ -1,0 +1,69 @@
+body, html {
+    scroll-behavior: smooth;
+    scroll-snap-align: center;
+    overflow: hidden;
+    width: 4000px;
+    height: 9569px;
+}
+
+.link {
+    position: absolute;
+    z-index: 2;
+    font-size: 15em;
+    color: var(--white);
+    animation: vibe 5s linear infinite;
+}
+.link > a {
+    color: var(--white);
+    opacity: .5;
+    transition: color 1s ease-in-out;
+}
+
+.link > a:hover {
+    color: var(--black);
+}
+#morning {
+    top: 460px;
+    left: 1000px;
+}
+
+#war {
+    top: 1700px;
+    left: 700px;
+}
+
+
+#devil {
+    top: 800px;
+    left: 3200px;
+}
+
+#sanctuary {
+    top: 1600px;
+    left: 3350px;
+}
+
+#egg {
+    top: 3200px;
+    left: 1000px;
+}
+
+#neck {
+    top: 8160px;
+    left: 290px;
+}
+
+
+#bird {
+    top: 5965px;
+    left: 3110px;
+}
+
+@keyframes vibe {
+    0%{
+       transform: rotate(0deg);
+      }
+   100%{
+       transform: rotate(360deg);
+      }
+   }
