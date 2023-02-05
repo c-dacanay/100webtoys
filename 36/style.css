@@ -1,0 +1,109 @@
+body, html {
+    scroll-behavior: smooth;
+    margin: 0;
+    overflow: hidden;
+    color: var(--white) !important;
+}
+
+.nav {
+    z-index: 10;
+}
+
+img {
+    padding-top: 10em;
+    padding-bottom: 10em;
+    width: 125%;
+    position: absolute;
+    top: 0;
+    filter:grayscale(0);
+    transition: filter .5s ease-out;
+}
+
+.grey {
+    filter:grayscale(1);
+}
+.newnav {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: var(--black);
+    color: var(--green);
+    padding: .5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#meta {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: .5em;
+    padding-left: 1.25em;
+    flex: 1;
+}
+
+#meta::before{
+    content: '...'
+}
+
+.item {
+    font-size: .75em;
+    border: 1px var(--green) solid;
+    padding: .5em 1em .5em 1em;
+    margin: 1em;
+    transition: all .5s linear;
+}
+
+.item:hover {
+    background-color: var(--green);
+    color: var(--black);
+    border: 1px var(--white) solid;
+    cursor:crosshair;
+    text-decoration: underline;
+}
+
+.item::before {
+    content: "> "
+}
+
+.select {
+    border: 1px var(--white) inset;
+    background-color: var(--green);
+    color: var(--black);
+}
+
+.window {
+    /* display: none; */
+    position: fixed;
+    background-color: var(--black);
+    transition: width 1s ease-in-out, height 1s ease-in-out;
+}
+
+.topbottom {
+    width: 100vw;
+    height: 30vh;
+}
+
+#top {
+    top: 0;
+}
+
+#bottom {
+    bottom: -1em;
+}
+
+.leftright {
+    height: 100vh;
+    width: 40vw;
+}
+
+#right {
+    right: 0;
+}
