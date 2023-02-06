@@ -1,0 +1,61 @@
+body {
+    overflow: hidden;
+    background-size: cover;
+    cursor:grab;
+    color: white !important;
+    background: url(../img/35.JPG);
+}
+
+.hitbox {
+    position: absolute;
+    width: 99vw;
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    position: absolute;
+    left: -25%;
+    top: 50%;
+}
+
+.tile {
+  clip-path: url(#polygon); 
+  height: 150vh;
+  width: 150vw;
+  background: url(../img/35.JPG);
+  filter: contrast(120%) saturate(100%);
+  position: absolute;
+  transform-origin: top center;
+  z-index: 1;
+}
+
+#hit {
+    position: absolute;
+    z-index: 10;
+    font-size: 3em;
+}
+
+#hit:hover {
+    color: var(--white);
+    cursor: crosshair;
+}
+
+
+.tile:nth-child(1) {
+  transform: rotate(60deg);
+}
+.tile:nth-child(2) {
+    
+  transform: rotate(120deg);
+}
+.tile:nth-child(3) {
+  transform: rotate(180deg);
+}
+.tile:nth-child(4) {
+  transform: rotate(240deg);
+}
+.tile:nth-child(5) {
+  transform: rotate(-60deg);
+}
