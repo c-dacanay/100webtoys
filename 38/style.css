@@ -1,0 +1,60 @@
+* {box-sizing: border-box;}
+
+body {
+    overscroll-behavior: none;
+    margin: 0;
+    background-color: black !important;
+    color: var(--white) !important;
+}
+
+h1, p {
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+p {
+    font-size: 1.25em;
+}
+.cover {
+    background-image: url('../src/sky.gif');
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4em;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10em;
+}
+
+.scroll-bound {
+	height: 500vh;
+}
+
+.content {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* gap: 1em; */
+}
+
+video {
+    filter: contrast(1.55);
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.big {
+    max-height: 70% !important;
+}
+.contrast {
+    filter: brightness(3);
+}
