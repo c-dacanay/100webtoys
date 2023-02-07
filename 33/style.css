@@ -1,7 +1,7 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-image: url('./trees.gif');
+    background-image: url('../src/trees.gif');
     background-size: 115%;
     background-position: 36% 30%;
     color: var(--white) !important;
