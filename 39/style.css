@@ -1,0 +1,31 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    align-items:center;
+}
+
+.instructions {
+    position: absolute;
+    bottom: 28vh;
+}
+.circle {
+  position: fixed;
+  height: 25vw;
+  width: 25vw;
+  border-radius: 50%;
+  background:transparent;
+  border: 80px solid white;
+  opacity:0;
+  z-index: -1;
+  animation: grow 1s linear;
+}
+
+@keyframes grow {
+  0% {opacity:0;transform:scale(0)}
+  10% {opacity:1;transform: scale(0.5)}
+  100% {opacity:0;transform:scale(3)}
+}
