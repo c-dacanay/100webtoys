@@ -1,0 +1,87 @@
+html, body {
+    overflow: hidden;
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+}
+
+.wrapper {
+    width: 45vw;
+    height: 89vh;
+    position: relative;
+    left: 25em;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    margin: 1em 0em 2em 0em;
+    gap: 2em;
+}
+details {
+
+    padding: .5em;
+    /* margin-top: .5em; */
+    /* width: fit-content; */
+}
+
+details > details, details > p {
+   padding-left: 1em;
+}
+
+details > p {
+    line-height: 1em;
+    font-style: italic;
+}
+
+summary {
+    font-family: 'Courier New', Courier, monospace !important;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.floor[open] {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.floor[open] > summary {
+    border-bottom: 1px var(--black) dotted;
+}
+
+.floor > summary {
+    border-bottom: 1px var(--white) dotted;
+}
+
+.room[open] {
+    border: 1px var(--black) dotted;
+    background-color: var(--white);
+}
+
+.dark {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+}
+/* ===== Scrollbar CSS =====
+Source: https://codepen.io/stephenpaton-tech/full/JjRvGmY */
+/* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--white) var(--black);
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--black);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 4px solid var(--black);
+  }
