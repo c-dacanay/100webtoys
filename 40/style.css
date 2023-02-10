@@ -1,0 +1,101 @@
+body {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+}
+
+.dream {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tower > * {
+    z-index: 1;
+}
+
+.tower {
+    height: 86vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0em;
+}
+.floor {
+    background-color: var(--red);
+	transform: rotateX(84deg) rotateZ(0deg);
+    animation: 3s linear 3s infinite rotate;
+    transition: background-color 1s;
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.floor:hover {
+    background-color: white !important;
+}
+
+h3 {
+    padding: -3em;
+    margin: 0em;
+    opacity: 0;
+    transition: opacity .5s linear;
+    background-color: var(--black);
+    padding: .5em;
+}
+
+.images {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.images > * {
+    z-index: 0;
+    max-height: 88vh;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.active {
+    opacity: 1;
+}
+
+
+@keyframes rotate {
+    from { transform: rotateX(84deg) rotateZ(-180deg)};
+    to { transform: rotateX(84deg) rotateZ(180deg)};
+}
+
+#f1 {
+    width: 80px;
+    height: 80px;
+}
+
+#f2 {
+    width: 100px;
+    height: 100px;
+}
+#f3 {
+    width: 150px;
+    height: 150px;
+}
+
+#f4 {
+    width: 200px;
+    height: 200px;
+}
+
+#f5 {
+    width: 250px;
+    height: 250px;
+}
+
+#f6 {
+    width: 100px;
+    height: 100px;
+}
