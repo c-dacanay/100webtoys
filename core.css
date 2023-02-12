@@ -68,6 +68,36 @@ a:hover {
     gap: .3em;
 }
 
+.mobile {
+    display: none;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 690px){
+.mobile {
+    position: absolute;
+    top: 0em;
+    width: 100vw;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    color: var(--white);
+    z-index: 100;
+}
+
+.mobile > p {
+    max-width: 70vw;
+    text-align: center;
+}
+
+.m-hide {
+    display: none;
+}
+}
+
 /* UTILITIES */
 .debug {
     border: 1px var(--red) solid;
