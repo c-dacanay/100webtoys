@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.nav {
+    background-color: var(--white);
+}
+
+.wrapper {
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    font-size: 2em;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.wrapper > *:hover {
+    color: var(--white);
+    cursor: grab;
+
+}
+.p5Canvas {
+    z-index: 5;
+}
