@@ -29,7 +29,7 @@ body, html {
     font-size: 8em;
     z-index: 3;
     filter: drop-shadow(0 0 2rem var(--red));
-    transition: opacity 1s ease-in-out;
+    /* transition: opacity 1s ease-in-out; */
     animation: flicker 1.5s ease-in-out infinite;
 }
 
@@ -46,22 +46,22 @@ body, html {
 
 
 @keyframes flicker {
-    0%   { opacity:.25; }
+    0%   { opacity:.3; }
     50%  { opacity:.1; }
-    100% { opacity:.25; }
+    100% { opacity:.3; }
 }
 @-o-keyframes flicker{
-    0%   { opacity:.25; }
+    0%   { opacity:.3; }
     50%  { opacity:.1; }
-    100% { opacity:.25; }
+    100% { opacity:.3; }
 }
 @-moz-keyframes flicker{
-    0%   { opacity:.25; }
+    0%   { opacity:.3; }
     50%  { opacity:.1; }
-    100% { opacity:.25; }
+    100% { opacity:.3; }
 }
 @-webkit-keyframes flicker{
-    0%   { opacity:.25; }
+    0%   { opacity:.3; }
     50%  { opacity:.1; }
-    100% { opacity:.25; }
+    100% { opacity:.3; }
 }

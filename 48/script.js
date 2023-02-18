@@ -32,6 +32,6 @@ addEventListener('mousemove', (e) => {
     let mousey = Math.abs(1-(e.y/windowHeight) * 2)
 
     console.log(mousex, mousey)
-    noise.style.opacity = .7 - (Math.max(mousex));
+    noise.style.opacity = .5 - (Math.max(mousex));
     // console.log(e)
 });
