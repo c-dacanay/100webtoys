@@ -1,0 +1,67 @@
+body, html {
+    margin: 0;
+    overflow: hidden;
+    color: var(--white) !important;
+}
+
+.wrapper {
+    width: 100vw;
+}
+
+.wrapper > img {
+    width: 100%;
+    min-width: 1200px;
+}
+
+#stick {
+    position: absolute;
+    opacity: .1;
+    z-index: 2;
+}
+
+#portal {
+    position: absolute;
+    z-index: 10;
+    cursor:zoom-in;
+    opacity: .05;
+    left: 48%;
+    top: 40%;
+    font-size: 8em;
+    z-index: 3;
+    filter: drop-shadow(0 0 2rem var(--red));
+    transition: opacity 1s ease-in-out;
+    animation: flicker 1.5s ease-in-out infinite;
+}
+
+.world {
+    position: absolute;
+    opacity: 0;
+    color: white;
+    transition: opacity 1s ease-in-out;
+}
+
+.active {
+    opacity: 1 !important;
+}
+
+
+@keyframes flicker {
+    0%   { opacity:.25; }
+    50%  { opacity:.1; }
+    100% { opacity:.25; }
+}
+@-o-keyframes flicker{
+    0%   { opacity:.25; }
+    50%  { opacity:.1; }
+    100% { opacity:.25; }
+}
+@-moz-keyframes flicker{
+    0%   { opacity:.25; }
+    50%  { opacity:.1; }
+    100% { opacity:.25; }
+}
+@-webkit-keyframes flicker{
+    0%   { opacity:.25; }
+    50%  { opacity:.1; }
+    100% { opacity:.25; }
+}
