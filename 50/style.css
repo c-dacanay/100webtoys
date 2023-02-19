@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    overflow: auto;
+}
+.subnav {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 1em;
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    padding: .5em;
+    border-radius: 4em;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    display: flex;
+    width: 100vw;
+    height: 85vh;
+}
+
+.column {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+}
+.container {
+    margin: .5em;
+    flex: 1;
+    border-radius: 80px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.big {
+    flex: 1 1;
+}
+
+/* typing stuff */
+#c-type {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.type {
+    opacity:1;
+    font-size: 8em;
+    animation: vibe 1s infinite;
+  }
+  
+  @keyframes vibe {
+    0%{
+       transform: rotate(0deg);
+      }
+   100%{
+       transform: rotate(360deg);
+      }
+   }
+
+/* kaleido stuff */
+.kaleido {
+    width: 150%;
+    height: 150%;
+    transform: rotateZ(0);
+    padding-top: 45%;
+    margin-left: -25%;
+  }
+  
+.tile {
+    clip-path: url(#polygon); 
+    height: 50%;
+    width: 100%;
+    background: url(../img/35.JPG);
+    filter: contrast(120%) saturate(110%);
+    background-size: cover;
+    position: absolute;
+    transform-origin: top center;
+    animation: bgpos 10s ease-in-out infinite;
+  }
+  
+  @keyframes bgpos {
+    0%,100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: -500px 500px;
+    }
+  }
+  .tile:nth-child(2) {
+    transform: rotate(60deg);
+  }
+  .tile:nth-child(3) {
+    transform: rotate(120deg);
+  }
+  .tile:nth-child(4) {
+    transform: rotate(180deg);
+  }
+  .tile:nth-child(5) {
+    transform: rotate(240deg);
+  }
+  .tile:nth-child(6) {
+    transform: rotate(-60deg);
+  }
+
+  /* magnet stuff */
+.holder {
+  display: flex;
+  justify-content: center;
+  gap: .5em;
+  margin-top: .5em;
+  flex-wrap: wrap;
+}
+.magnet {
+    background-color: var(--white);
+    display: inline-block;
+    padding: .1em .5em;
+    margin: 0;
+  }
+
+  #m1 {
+    top: 1em;
+  }
+
+
+  @media only screen
+and (max-width: 700px) {
+    .wrapper {
+        flex-direction: column;
+        height: 100vh;
+    }
+    .column {
+      flex-direction: row;
+    }
+
+    .big {
+      flex: 3;
+    }
+}
