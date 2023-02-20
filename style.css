@@ -38,10 +38,6 @@
     flex-flow: column wrap;
 }
 
-.days > * {
-    flex: 1 3em;
-}
-
 
 .title {
     display: flex;
