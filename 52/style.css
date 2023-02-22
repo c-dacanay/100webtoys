@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+.wrapper {
+    width: 100vw;
+    height: 86vh;
+    display: flex;
+    gap: 3em;
+    justify-content: center;
+    align-items: center;
+}
+
+#num {
+    width: 10em;
+    height: 2em;
+    align-self: flex-start;
+}
+
+#range {
+    width: 25vw;
+}
+
+#set {
+    height: 10em;
+}
