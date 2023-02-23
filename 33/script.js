@@ -20,6 +20,8 @@ questions.forEach(q =>
     q.addEventListener("click", answer)
 )
 
+console.log(memory)
+
 function answer() {
     //close the frame
     let next = 0;

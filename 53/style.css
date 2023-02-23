@@ -1,0 +1,17 @@
+#frame {
+    position: absolute;
+    pointer-events: none;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5em;
+}
+
+.p5Canvas {
+    padding: 1em;
+    /* display: flex; */
+    /* justify-content: center; */
+}
