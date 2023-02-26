@@ -7,7 +7,7 @@ button.addEventListener("click", nice)
 function nice() {
     for (let i = 0; i < 100; i++) {
     setTimeout(() => {
-        const para = document.createElement("h1");
+        const para = document.createElement("h2");
     para.innerText = "nice" + ` `;
     wrapper.appendChild(para);
     }, 100 * i)
