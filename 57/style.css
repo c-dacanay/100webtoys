@@ -1,0 +1,27 @@
+.wrapper {
+    height: 87vh;
+    width: 99vw;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.hit {
+    background-color: var(--yellow);
+    height: 90%;
+    padding: .5em;
+    display: flex;
+    align-content: end;
+}
+
+
+.item {
+    margin: 0;
+    padding-top: 70vh;
+    transition: padding-top 5s ease-in-out;
+}
+
+.item:hover {
+    padding-top: 10vh;
+}
