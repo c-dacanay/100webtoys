@@ -1,0 +1,122 @@
+body {
+    overflow:hidden;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.schedule {
+    border: 1px solid var(--black);
+    height: fit-content;
+    padding: 1em;
+    margin-top: 3em;
+    background-color: var(--black);
+    color: var(--white)
+}
+.radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    padding-top: 3em;
+    gap: 2em;
+}
+.tuner {
+    /* position: sticky; */
+    display: flex;
+    gap: 1em;
+    /* padding-top: 2em; */
+    padding-bottom: 100vh;
+}
+
+.type {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.type > * {
+    padding: 0;
+}
+.rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: .1em;
+    letter-spacing: .5em;
+}
+
+.slides > *{
+    padding: 0;
+    margin: 0;
+}
+.numbers {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+h3 {
+    margin-top: 0em;
+    font-family: Arial, Helvetica, sans-serif !important;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+h4 {
+    padding: 0;
+    margin: .1em;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+.selected {
+    font-size: 2em;
+    color: var(--red);
+}
+
+
+/* listen in */
+.pad {
+    padding-top: 1em;
+}
+
+#listen {
+    display: none;
+    margin: 0em;
+}
+
+#content {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    margin-top: 2.5em;
+    left: 33vw;
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+#stop {
+    display: none;
+    width: fit-content;
+}
+
+#text {
+    display: none;
+    padding: 1em;
+}
