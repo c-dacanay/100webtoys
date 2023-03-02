@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+  
+  .infinite {
+    background: url("./bg.png") repeat-x;
+    height: 100vh;
+    width: 18813px;
+    animation: slide 25s linear infinite;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-6271px, 0, 0); /* The image width */
+    }
+  }
+  
