@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+button {
+    z-index: 10;
+    font-family: Helvetica, sans-serif;
+    font-size: 4em;
+    color: rgb(228, 238, 238);
+    background: linear-gradient(8deg, rgb(216, 230, 246), rgb(112, 106, 106) 50%, rgba(249, 249, 249, 1)); 
+    text-shadow: #494444 10px 0 20px;
+    /* text-shadow: 0 .1em .2em rgba(112, 106, 106, 1); */
+    padding: 1em 2em;
+    border-radius: 8em;
+    filter: drop-shadow(6px 0 5px #494444)
+}
+
+main {
+    z-index: 0;
+}
+.p5Canvas {
+    z-index: 0;
+}
+
+button:hover {
+    color: rgb(191, 194, 194);
+    background: linear-gradient(8deg, rgb(184, 196, 210), rgb(71, 69, 69) 50%, rgb(157, 157, 157)); 
+    
+}
