@@ -1,0 +1,23 @@
+body {
+    overflow: hidden;
+    background: url(./src/base.svg);
+    background-size: cover;
+}
+.wrapper {
+    position: sticky;
+    top: 2em;
+    width: 100vw;
+    height: 86vh;
+    display: flex;
+    justify-content: center;
+    align-items:end;
+}
+
+#door {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.height {
+    height: 150vh;
+}
