@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&family=Open+Sans&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  --bar-size: 50%;
+  --color-bg: var(--black);
+  --color-main: var(--blue);
+  --color-hard: var(--red);
+  --color-a: rgba(226, 251, 252, 0.6);
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+svg {
+  margin-top: 3em;
+  border: 1px solid var(--color-hard);
+}
+
+.wrapper {
+    width: 771.187px;
+    display: flex;
+    flex-flow: column wrap;
+    padding-left: 2em;
+}
+
+.main {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 3em;
+}
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+#dossier {
+height: 645px;
+width: 65%;
+border: 1px solid var(--color-main);
+overflow: hidden;
+display: none;
+z-index: 1;
+min-width: 350px;
+max-width: 720px;
+}
+
+.detail {
+  height: 100%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.detail h4 {
+font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+font-weight: bold;
+/* font-style: italic; */
+color: var(--color-main);
+/* text-decoration: underline dotted 1px; */
+margin: 8px;
+}
+
+#pins {
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  fill: var(--color-main);
+  display: none;
+}
+
+.highlight g {
+  fill: var(--color-hard);
+  stroke: var(--color-bg);
+}
+
+.hide {
+  display: none;
+}
+#bg {
+  fill: var(--color-a);
+  stroke: var(--color-a);
+}
+
+.pincircle {
+  fill: var(--white);
+}
+
+.roads {
+  display: none;
+}
+
+
+button, .navbar a {
+    font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+    color: var(--color-main);
+    background-color: var(--white);
+    padding: .5em;
+    border: 0px;
+    /* border: 1px solid var(--color-main); */
+}
+
+button:hover, .navbar a:hover {
+  color: var(--color-bg);
+  background-color: var(--color-main);
+  border: 0px;
+}
+
+button:active, .navbar a:active {
+  color: var(--color-main);
+  background-color: var(--black);
+}
+
+h1, h2, h3 {
+    font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace !important;
+    color: var(--color-main);
+    /* text-decoration: underline dotted 1px var(--color-a); */
+}
+
+h3 {
+  text-align: center;
+}
+
+p,
+li {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.4em;
+  color: var(--color-main);
+  margin: 8px;
+}
+
+#title, #subject {
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  font-size: 16px;
+  line-height: 1.2;
+  fill: var(--color-hard);
+  font-weight: bold;
+}
+
+code {
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: lighter;
+  color: var(--red);
+}
+
+.stats, .ooc {
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  margin: 8px;
+  padding: 16px;
+  color: var(--color-bg);
+  /* display: inline-block; */
+  background-color: var(--color-a);
+  float: left;
+}
+
+.stats {
+  width: 120px;
+}
+.navbar {
+  overflow: hidden;
+  z-index: 100;
+  min-width: 350px;
+  display: none;
+  gap: 1em;
+}
+
+.wide {
+  width: 100% !important;
+}
+.navbar a {
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* .flex-center {
+ justify-content: center;
+} */
+
+.dropdown {
+  padding-top: 7px;
+  /* overflow: hidden; */
+}
+
+.dropdown-content {
+  display: none;
+  padding-top: 7px;
+  position: absolute;
+  /* min-width: 160px; */
+  /* z-index: 1; */
+}
+
+.dropdown-content a {
+  float: none;
+  color: var(--color-hard);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--color-hard);
+  color: var(--white);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.progbg {
+  border-radius: 8px;
+  width: inherit;
+  border: 1px solid var(--color-hard);
+  height: 12px;
+}
+
+.progress {
+  background-color: var(--color-hard);
+  border-radius: 5px;
+  padding: 0.01em 8px;
+  height: 12px;
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  font-size: 10px;
+  color: var(--color-bg)
+}
