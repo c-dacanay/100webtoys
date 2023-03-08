@@ -48,3 +48,12 @@ function newMovers() {
     movers.push(new Mover(random(width * .2, width * .8), random(height * .2, height * .7), random(height / 500, height / 150)));
   }
 }
+
+function mousePressed() {
+  if (sound.isPlaying() == false) {
+    sound.loop();
+    console.log('play!');
+  } else {
+    sound.pause();
+  }
+}
