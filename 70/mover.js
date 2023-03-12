@@ -27,7 +27,7 @@ class Eye {
       fill(this.color, 500, 500, 50);
       //top eyelid
       //x, y, width, height
-      rect(this.x - (this.radius * .5), this.y - (this.radius * .5), this.radius, this.radius * .2);
+      // rect(this.x - (this.radius * .5), this.y - (this.radius * .5), this.radius, this.radius * .2);
 
       //pupils
       fill(0, 0, 0, 80);
