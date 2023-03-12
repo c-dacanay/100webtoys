@@ -1,0 +1,199 @@
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.3rem;
+}
+
+body,
+p {
+  font-size: 1rem;
+}
+
+
+#layer1 {
+  position: relative;
+  z-index: 0;
+}
+
+#layer2 {
+  position: absolute;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 125%;
+  top: 5%;
+}
+#layer3 {
+  position: absolute;
+  z-index: 2;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 15%;
+}
+
+#credits {
+  opacity: 80%;
+  display: none;
+  z-index: 6;
+  width: 55%;
+  padding: 1.5rem;
+  background-color: white;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 20%;
+}
+
+#bottom {
+  position: fixed;
+  z-index: 4;
+  margin-left: 12%;
+  margin-right: 12%;
+  bottom: 10%;
+  width: 75%;
+}
+
+.rotating {
+  -webkit-animation: rotating 12s linear infinite;
+  -moz-animation: rotating 12s linear infinite;
+  -ms-animation: rotating 12s linear infinite;
+  -o-animation: rotating 12s linear infinite;
+  animation: rotating 12s linear infinite;
+}
+
+.paused {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.gradientSpin {
+  background: linear-gradient(360deg, #7B67F3, #E298E4, #2e94b0, #FFFFF1);
+  background-size: 800% 800%;
+  -webkit-animation: gradient-spin 30s ease infinite;
+  -moz-animation: gradient-spin 30s ease infinite;
+  animation: gradient-spin 30s ease infinite;
+}
+
+@-webkit-keyframes gradient-spin {
+  0% {
+    background-position: 4% 0%;
+  }
+  50% {
+    background-position: 97% 100%;
+  }
+  100% {
+    background-position: 4% 0%;
+  }
+}
+@-moz-keyframes gradient-spin {
+  0% {
+    background-position: 4% 0%;
+  }
+  50% {
+    background-position: 97% 100%;
+  }
+  100% {
+    background-position: 4% 0%;
+  }
+}
+@keyframes gradient-spin {
+  0% {
+    background-position: 4% 0%;
+  }
+  50% {
+    background-position: 97% 100%;
+  }
+  100% {
+    background-position: 4% 0%;
+  }
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* range */
+html input[type="range"] {
+  border-radius: 500px;
+  width: 100%;
+  max-width: 100%;
+  transition: box-shadow 0.2s ease-in-out;
+}
+html input[type="range"] {
+  overflow: hidden;
+  height: 15px;
+  -webkit-appearance: none;
+  background-color: var(--white);
+}
+
+html input[type="range"]::-webkit-slider-runnable-track {
+  height: 20px;
+  -webkit-appearance: none;
+  color: #444;
+  margin-top: -1px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+html input[type="range"]::-webkit-slider-thumb {
+  width: 40px;
+  -webkit-appearance: none;
+  height: 40px;
+  cursor: ew-resize;
+  background: #fff;
+  box-shadow: -1000px 0 0 990px #3a3a3a, inset 0 0 0 15px #3a3a3a;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease-in-out;
+  position: relative;
+  top: -10px;
+  z-index: 4;
+}
+@media screen and (min-width: 730px) {
+  #layer2 {
+    width: 50%;
+  }
+
+  #layer3 {
+    width: 43%;
+  }
+}
