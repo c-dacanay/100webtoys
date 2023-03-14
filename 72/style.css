@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black !important;
+    color: var(--white) !important;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.subnav {
+    padding: 1em 2em 1em 2em;
+    width: 100vw;
+    background-color: var(--blue);
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+}
+
+marquee {
+    font-family: 'Courier New', Courier, monospace;
+}
+#scrollcounter {
+    width: 100vw;
+    background-color: var(--white);
+    height: 4px;
+    margin: 1em;
+}
+.sub-buttons {
+    gap: 1em;
+    padding-top: 1em;
+    padding-right: 5em;
+}
+.flex-row {
+    display: flex;
+}
+
+.full-height {
+    height: 100%;
+}
+.content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+ 
+}
+
+/* TEXT BOX */
+#text {
+    max-width: 520px;
+    overflow-y: scroll;
+    max-height: 80vh;
+    margin-left: 2em;
+}
+
+#text > p {
+    max-width: 500px;
+}
+#text > img {
+    max-width: 100%;
+}
+
+#meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+#status {
+    gap: 2em;
+    justify-content: center;
+    font-size: 1em;
+    padding: .1em;
+
+    /* border: 1pt var(--black) solid; */
+}
+
+#status > p {
+    font-family: 'Courier New', Courier, monospace !important;
+}
