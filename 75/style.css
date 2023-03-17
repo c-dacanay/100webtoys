@@ -1,0 +1,20 @@
+html {
+	margin:0px;
+	padding:0px;
+}
+
+body {
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	background: #070707 !important;
+    color: var(--white) !important;
+}
+
+#game {
+	background:black;
+	width:80vw !important;
+	max-width:80vh !important;
+	margin:auto;
+	display:block;
+}
