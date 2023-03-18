@@ -1,0 +1,12 @@
+body {
+    overflow: hidden;
+    margin: 0;
+}
+
+#instructions {
+    position: absolute;
+    padding: 1em;
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    margin: 1em;
+}
