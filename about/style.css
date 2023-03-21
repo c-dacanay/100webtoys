@@ -26,8 +26,9 @@ p, li {
 .practice {
     border-left: 1px solid var(--black);
     padding-left: 2em;
-    width: 42vw;
+    width: 48vw;
     height: 85vh;
+    overflow: auto;
 }
 
 .color {
