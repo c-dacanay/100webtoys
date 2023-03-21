@@ -1,0 +1,26 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+  }
+  
+  h3 {
+    font-family:'Courier New', Courier, monospace !important;
+  }
+  #event {
+    margin: 1em;
+    padding: .5em;
+    text-align: left;
+    border: 1px solid var(--red);
+    opacity: 0;
+    width: 30vw;
+    height: 25vh;
+    transition: opacity 1s ease-out;
+  }
+  
+  .show {
+    border: 1px solid var(--red);
+    opacity: 1 !important;
+  }
