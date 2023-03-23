@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../core.css">
+    <link rel="icon" href="../favicon.svg">
+    <title>0 / 100</title>
+</head>
+
+<!-- Before posting:
+- Did you change the before and after arrows?
+- Did you change the title? how about the bottom numbers?
+- Did you cite code?
+- Did you change the homepage? (you can save this for later)
+-->
+
+<body>
+    <div class="r-container flexcenter fullwidth">
+    <div class="stats flexcenter">
+        <h4>PWR</h4>
+        <input
+        value="35"
+        type="number"
+        min="0"
+        max="100"
+      >
+    </div>
+    <div class="stats flexcenter">
+        <h4>OXY</h4>
+        <button>replenish</button>
+    </div>
+ 
+    </div>
+    </svg>
+    <div class="flexcenter fullwidth absolute">
+    <svg class="progress-ring" width="300" height="300">
+     <circle
+     class="progress-ring__back"
+     stroke="#D9D9D9"
+     stroke-width="25"
+     fill="#921B43"
+     r="100"
+     cx="150"
+     cy="150"/>
+     <circle
+     class="progress-ring__circle"
+     stroke="#BF436C"
+     stroke-width="25"
+     fill="transparent"
+     r="100"
+     cx="150"
+     cy="150"/>
+    </svg>
+    <svg class="progress-ring" width="300" height="300">
+        <circle
+        class="progress-ring__back"
+        stroke="#D9D9D9"
+        stroke-width="25"
+        fill="#921B43"
+        r="100"
+        cx="150"
+        cy="150"/>
+        <circle
+        class="progress-ring__circle"
+        stroke="#BF436C"
+        stroke-width="25"
+        fill="transparent"
+        r="100"
+        cx="150"
+        cy="150"/>
+    </svg>
+    </div>
+
+</div>
+    
+    <div class="nav">
+        <a class="next" href="../01/"><h1>⬅</h1></a>
+        <div class="details"><small>⟡ 0/<a href="../index.html">100</a> ⟡</small>
+        <small id="about"><a href="../about/">about the project</a></small>
+        </div>
+        <a class="next" href="../01/"><h1>⮕</h1></a>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+.fullwidth {
+    width: 100vw;
+}
+
+.flexcenter {
+    display: flex;
+    justify-content: center;
+}
+
+.absolute {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+.stats {
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.r-container {
+    padding-top: 3em;
+    position: flex;
+}
+.progress-ring {
+display: flex; 
+}
+
+.progress-ring__circle {
+    transition: 0.35s stroke-dashoffset;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+h4 {
+    font-family: 'IBM Plex Mono', Courier, monospace !important;
+    color: var(--white);
+    font-size: 1.75em;
+    margin-bottom: .5em;
+}
+
+input {
+    width: 80px;
+}
+
