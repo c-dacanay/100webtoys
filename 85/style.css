@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    justify-content: center;
+}
+
+span {
+    font-size: .75em;
+}
+label {
+    text-align: left;
+    padding-bottom: 0;
+}
