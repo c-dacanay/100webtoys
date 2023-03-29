@@ -1,0 +1,41 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+#door {
+    padding-top: 5em;
+    width: 250px;
+    opacity: 1;
+    transition: opacity 5s;
+}
+
+img {
+    object-fit: cover;
+}
+
+.keys {
+    display: flex;
+    gap: 4em;
+}
+
+.open {
+    opacity: 0 !important;
+}
+.wiggle {
+    animation-name: wiggle;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    /* animation-iteration-count: infinite; */
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
