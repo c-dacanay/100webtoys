@@ -1,0 +1,46 @@
+body {
+    background-color: #09060d !important;
+    color: white !important;
+}
+
+#red {
+    background-color: #ff0000;
+    border-radius: 5em;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 310px;
+    left: 230px;
+    transition: all 0.3s ease-out;
+}
+
+#red:hover {
+    width: 60px;
+    height: 60px;
+    transform: translate(10px, 10px);
+  }
+
+#face {
+    padding: 2em;
+    width: 700px;
+}
+
+.flex {
+    display: flex;
+    /* background-color: var(--pink); */
+    align-items: center;
+}
+
+#eye {
+    opacity: 0;
+    width: 400px;
+    height: 400px;
+}
+
+p {
+    color: red !important;
+    font-size: 3em;
+    letter-spacing: .025em;
+    font-family: "Times New Roman", Times, serif !important;
+    font-style: italic;
+}
