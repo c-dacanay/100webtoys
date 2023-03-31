@@ -1,0 +1,63 @@
+body {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+    background-image: url('../src/fire.gif');
+    background-size: cover;
+}
+
+#spin {
+    position: fixed;
+    max-width: 80px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.hexagon {
+    position: relative;
+    width: 80vw;
+    top: 15em;
+    margin: 0 auto;
+  }
+  
+  .hexagon img {
+    z-index: 0;
+    position: absolute;
+    max-width: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: .2;
+    transition: .8s opacity ease-in-out;
+  }
+
+  .hexagon img:hover {
+    opacity: 1;
+  }
+  
+  .hexagon .top {
+    transform: translateY(-50%);
+  }
+  
+  .hexagon .bottom {
+    transform: translateY(200%);
+  }
+  
+  .hexagon .left-top {
+    transform: translateY(10%) translateX(-120%);
+  }
+  
+  .hexagon .right-top {
+    transform: translateY(10%) translateX(120%);
+  }
+  
+  .hexagon .left-bottom {
+    transform: translateY(135%) translateX(-120%);
+  }
+  
+  .hexagon .right-bottom {
+    transform: translateY(135%) translateX(120%);
+  }
+  
