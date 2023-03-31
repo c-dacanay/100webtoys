@@ -1,8 +1,6 @@
 body {
     background-color: var(--black) !important;
     color: var(--white) !important;
-    background-image: url('../src/fire.gif');
-    background-size: cover;
 }
 
 #spin {
@@ -61,3 +59,25 @@ body {
     transform: translateY(135%) translateX(120%);
   }
   
+  #flourish {
+    z-index: -1;
+    /* color: #242527; */
+    /* top: -10em; */
+    left: 23%;
+    /* margin-left: -15em; */
+    animation: spin 100s linear infinite;
+    position: absolute;
+}
+
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
