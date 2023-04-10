@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#desc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+    position: absolute;
+}
+
+#desc > small {
+    background-color: var(--white);
+}
+.ascii > p{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 4px;
+    line-height: 5.6px;
+    white-space: pre;
+}
