@@ -10,11 +10,19 @@
     <title>100 / 100</title>
 </head>
 <body>
+    <div id="preview"></div>
     <div class="content">
-        <div class="title"><h1> ❋ 100 days of webtoys  ❋</h1> 
-            <p>by <a href="http://cdacanay.com" target="_blank">christina dacanay</p></a>
-            <caption>warning: not optimized for mobile (or screens that aren't my own tbh)</caption>         
-            </div>
+        <div class="title"><h1>100 days of webtoys</h1> 
+            <p>by <a class="b-link" href="http://cdacanay.com" target="_blank">christina dacanay</p></a>
+            <p class="dates">(Jan 1 - April 10, 2023)</p>
+            <div class="btns">
+            <button id="all-btn">all</button>
+            <button id="f-btn"> ✷ favorite</button>
+            <button id="c-btn"> ⎌ curious</button>
+            <button id="v-btn"> ⥉ viable</button>
+            <button id="s-btn"> ☄ surprising</button></div>
+        </div>
+        <div class="sub"><p><span id="total">100 webtoys made with consistent daily effort</span></p></div>
 
         <div class="days">
 
@@ -433,7 +441,7 @@
 
                 <div class="container">
                     <div class="number"><p>45</p></div>
-                    <div class="info"><h3><a href="./45/"> 💔 mixtape</a></h3>
+                    <div class="info"><h3><a href="./45/"> heartbreaker mixtape</a></h3>
                     <small class="criteria">
                 <small class="curious" title="curious"></small>
                 <small class="fav" title="fav"></small>
@@ -699,7 +707,7 @@
 
             <div class="container">
                 <div class="number"><p>75</p></div>
-                <div class="info"><h3><a href="./75/">first time away<br> from home, for good</a></h3>
+                <div class="info"><h3><a href="./75/">first time away</a></h3>
                 <small class="criteria">
             </small>
             </div>
@@ -923,9 +931,6 @@
             <div class="number"><p>100</p></div>
             <div class="info"><h3><a href="./100/">thanks!</a></h3>
             <small class="criteria">
-                <!-- <small class="curious" title="curious"></small> -->
-                <!-- <small class="surprising" title="surprising"></small> -->
-                <!-- <small class="viable" title="viable"></small> -->
             </small>
             </div>
             </div>
@@ -934,14 +939,14 @@
 
     <div class="nav">
         <a class="next hide"><h1>⬅</h1></a>
-        <div class="details"><small>⟡ 100/<a href="./index.html"></a>100</a> ⟡</small>
-        <small id="about"><a href="./about">about the project</a></small>
+        <div class="details"><small>⟡ 100/<a class="b-link" href="./index.html"></a>100</a> ⟡</small>
+        <small id="about"><a class="b-link" href="./about">about the project</a></small>
         </div>
 
-        <a class="next" href="./01/"><h1>⮕</h1></a>
+        <a class="next b-link" href="./01/"><h1>⮕</h1></a>
     </div>
     </div>
 
-
+    <script src="./script.js"></script>
 </body>
 </html>
