@@ -167,8 +167,21 @@ button {
 and (max-width: 700px)
  {
 
+body {
+    overflow-x: hidden;
+}
+.content, .nav, .preview {
+    max-width: 90vw;
+    padding: 0;
+}
+
+.m-hide {
+    display: none;
+}
 .title {
     flex-direction: column;
+    height: fit-content;
+    max-width: 90vw;
 }
 
 .title > * {
@@ -190,9 +203,13 @@ h3 {
     display: none;
 }
 
+.spacer {
+    height: 20vh;
+}
 .days {
     flex-flow: row wrap;
     justify-content: space-between;
+    margin-bottom: 100em;
 }
 
 .number > p {
