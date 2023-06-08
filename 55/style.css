@@ -12,11 +12,13 @@ body {
     width: 100vw;
     color: var(--white);
     display: flex;
+    justify-content: center;
+    gap: 5em;
 }
 
-.subnav, #content {
+/* .subnav, #content {
     flex: 1;
-}
+} */
 
 .subnav {
     display: flex;
@@ -26,13 +28,14 @@ body {
 
 ol {
     height: 75vh;
-    width: 25vw;
+    width: 30vw;
 }
 h1 {
-    font-family: 'Fjalla One', sans-serif !important;
+    font-family: 'Nanum Myeongjo', serif !important;
     text-transform: uppercase;
-    font-size: 1.5em;
-    padding: 1em;
+    font-size: 1.75em;
+    padding-bottom: 1em;
+    /* padding: 1em; */
     letter-spacing: .1rem;
 }
 
@@ -46,7 +49,7 @@ li {
     list-style: none;
     border-bottom: 1px solid var(--white);
     padding: .5em;
-    transition: padding 1s ease-in-out;
+    transition: padding .5s ease-out;
     cursor: pointer;
 }
 
@@ -59,10 +62,13 @@ li:active {
     padding-left: 2rem;
 }
 
+.active {
+    padding-left: 2rem;
+}
+
 p {
     font-size: 1.3em;
-    /* line-height: 1.5em; */
-    max-width: 35vw;
+    max-width: 580px;
     margin: 0em;
     margin-top: 1em;
 }
@@ -70,7 +76,9 @@ p {
   #content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 9em;
+    /* justify-content: center; */
+    flex: 1;
     transition: opacity 1s linear;
   }
 
