@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+@font-face {
+    font-family: 'Kawit';
+    src: url('../src/type/KawitFree-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
     overflow: hidden;
     margin: 0;
@@ -16,36 +25,40 @@ html, body {
     max-width: 600px;
     background-color: black;
     padding: 1em;
-    border: double var(--white);
+    /* border: double var(--white); */
     border-radius: 1em;
     transition: opacity 1s ease-in-out;
 }
 
 .d-title {
     display: flex;
-    gap: 1em;
-    align-items: baseline;
-    border-bottom: solid 1px var(--white);
+    flex-direction: column;
+    gap: .25em;
+    align-items: center;
+    /* border-bottom: solid 1px var(--white); */
 }
 
 .d-title > h1 {
     padding: 0;
     margin: 0em;
     line-height: 1em;
-    text-transform: capitalize;
-    font-family: cursive;
+    font-size: 45px;
+    font-family: 'Kawit', curisve;
 }
 
 .d-title > small {
     padding: 0;
-    font-size: 16px;
+    font-size: 24px;
+    font-family: 'Kawit', curisve;
+    text-transform: uppercase;
+        border-bottom: solid 1px var(--white);
 }
 
 .dream > p {
     font-size: 18px;
     /* letter-spacing: .02em; */
-    line-height: 1.25em;
-    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5em;
+    font-family: 'Nanum Myeongjo', serif !important;
 }
 
 #archipelago {
